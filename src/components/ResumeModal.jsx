@@ -1,13 +1,14 @@
 "use client";
 
-import { personalInfo, academicJourney, campusAndLeadershipExperience, flagshipProjects } from "@/data/portfolioData";
 import { 
   FiX, 
   FiPrinter, 
+  FiDownload,
   FiMail, 
   FiPhone, 
   FiMapPin, 
-  FiLinkedin
+  FiLinkedin,
+  FiExternalLink
 } from "react-icons/fi";
 
 export default function ResumeModal({ isOpen, onClose }) {
@@ -20,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/75 backdrop-blur-md animate-in fade-in duration-200">
       
-      {/* Container */}
+      {/* Modal Dialog Container */}
       <div className="bg-base-100 text-base-content w-full max-w-4xl max-h-[92vh] rounded-2xl sm:rounded-3xl shadow-2xl border border-base-content/15 flex flex-col overflow-hidden relative text-left">
         
         {/* Header Action Bar */}
@@ -28,20 +29,30 @@ export default function ResumeModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2 min-w-0">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span className="font-display font-bold text-xs sm:text-sm text-base-content truncate">
-              CV Preview • {personalInfo.preferredName}
+              Official Resume Preview • Tasnim Binte Noor
             </span>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            <a
+              href="/Tasnim_Binte_Noor_Resume.pdf"
+              download="Tasnim_Binte_Noor_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--accent-solid)] text-white hover:opacity-90 text-xs font-semibold transition-all shadow-md shadow-[var(--accent-glow)] active:scale-95"
+              title="Download Attached Resume PDF"
+            >
+              <FiDownload className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--accent-subtle)] text-[var(--accent-solid)] border border-[var(--accent-border)] hover:bg-[var(--accent-from)] hover:text-white text-xs font-semibold transition-all shadow-sm active:scale-95"
-              title="Print or Save as PDF"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-base-200 hover:bg-base-300 text-base-content border border-base-content/10 text-xs font-semibold transition-all shadow-sm active:scale-95"
+              title="Print Resume"
             >
               <FiPrinter className="w-3.5 h-3.5" />
-              <span className="hidden xs:inline">Print / Save PDF</span>
-              <span className="xs:hidden">PDF</span>
+              <span>Print</span>
             </button>
+
             <button
               onClick={onClose}
               className="w-8 h-8 rounded-full bg-base-300 hover:bg-base-content/20 text-base-content/80 flex items-center justify-center transition-colors"
@@ -52,177 +63,297 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* Scrollable Printable Resume Sheet */}
-        <div id="printable-resume" className="p-4 sm:p-8 md:p-10 overflow-y-auto space-y-5 sm:space-y-6 text-xs sm:text-sm">
+        {/* Scrollable Printable Resume Sheet (Matching Attached PDF) */}
+        <div id="printable-resume" className="p-5 sm:p-8 md:p-12 overflow-y-auto space-y-6 text-xs sm:text-sm bg-base-100">
           
-          {/* Header */}
-          <div className="border-b-2 border-base-content/20 pb-4 sm:pb-5">
-            <h1 className="font-display font-extrabold text-xl sm:text-3xl text-base-content tracking-tight uppercase">
-              {personalInfo.fullName}
+          {/* Resume Header */}
+          <div className="border-b-2 border-base-content/25 pb-4 sm:pb-5">
+            <h1 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-base-content tracking-tight uppercase">
+              TASNIM BINTE NOOR
             </h1>
-            <p className="text-xs sm:text-base font-semibold text-[var(--accent-solid)] mt-0.5">
-              BBA Undergraduate (Major in Finance • Completed 6 Semesters) &amp; Graphic Designer
-            </p>
-            <p className="text-[11px] sm:text-xs text-base-content/70 mt-1">
-              BRAC Business School, BRAC University • Alumna, Viqarunnisa Noon School and College
+            <p className="text-xs sm:text-sm font-bold text-base-content/80 mt-1 uppercase tracking-wider">
+              BUSINESS STUDENT | FINANCE | BUSINESS ANALYTICS &amp; INFORMATION SYSTEM
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2.5 sm:mt-3 text-[11px] sm:text-xs text-base-content/75 font-medium">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-2.5 sm:mt-3 text-xs text-base-content/75 font-medium">
               <span className="flex items-center gap-1">
-                <FiMapPin className="w-3 h-3 text-[var(--accent-solid)] shrink-0" />
-                {personalInfo.location}
+                <FiMapPin className="w-3.5 h-3.5 text-[var(--accent-solid)] shrink-0" />
+                Bangla Motore, Dhaka
               </span>
-              <span>•</span>
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1 hover:underline text-[var(--accent-solid)] font-semibold">
-                <FiMail className="w-3 h-3 shrink-0" />
-                {personalInfo.email}
+              <span>|</span>
+              <a href="tel:+8801700304827" className="flex items-center gap-1 hover:underline text-base-content">
+                <FiPhone className="w-3.5 h-3.5 text-[var(--accent-solid)] shrink-0" />
+                +8801700304827
               </a>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <FiPhone className="w-3 h-3 text-[var(--accent-solid)] shrink-0" />
-                {personalInfo.phone}
-              </span>
-              <span>•</span>
-              <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:underline text-[#0A66C2]">
-                <FiLinkedin className="w-3 h-3 shrink-0" />
-                linkedin.com/in/tasnim-binte-noor-nabila
+              <span>|</span>
+              <a href="mailto:tasnimbinten@gmail.com" className="flex items-center gap-1 hover:underline text-[var(--accent-solid)] font-semibold">
+                <FiMail className="w-3.5 h-3.5 shrink-0" />
+                tasnimbinten@gmail.com
+              </a>
+              <span>|</span>
+              <a 
+                href="https://www.linkedin.com/in/tasnim-binte-noor-nabila/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-1 hover:underline text-[#0A66C2] font-semibold"
+              >
+                <FiLinkedin className="w-3.5 h-3.5 shrink-0" />
+                <span>LinkedIn</span>
+                <FiExternalLink className="w-3 h-3 shrink-0" />
               </a>
             </div>
           </div>
 
-          {/* Executive Summary */}
+          {/* Professional Summary */}
           <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Professional Summary
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-2.5">
+              PROFESSIONAL SUMMARY
             </h2>
-            <p className="text-[11px] sm:text-xs md:text-sm text-base-content/85 leading-relaxed">
-              Business student majoring in Finance at BRAC University (completed 6 semesters) with a strong ambition to turn academic knowledge into a successful professional career. Combines confidence in working with numbers, data analysis, and logical problem-solving with a proven flair for creative graphic design and visual communication. Experienced Senior Executive at BUBEF and Graphic Designer at EDF with disciplined foundations from Viqarunnisa Noon School and College.
+            <p className="text-xs sm:text-sm text-base-content/85 leading-relaxed">
+              BBA student majoring in Finance with skills in Microsoft Excel, Power BI, graphic design, and content creation. Experienced in academic research, group projects, corporate event volunteering, and entrepreneurship training under SME Foundation. A punctual, honest, and hardworking individual interested in finance, business development, and continuous learning, with a commitment to contributing positively to the community.
             </p>
+          </div>
+
+          {/* Skills */}
+          <div>
+            <div className="flex items-center justify-between border-b border-base-content/20 pb-1 mb-2.5">
+              <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content">
+                SKILLS
+              </h2>
+              <span className="text-[11px] sm:text-xs font-semibold text-base-content/60 font-mono">
+                OCT 2024 - Present
+              </span>
+            </div>
+            
+            <ul className="space-y-2 text-xs sm:text-sm text-base-content/85 leading-relaxed">
+              <li className="flex items-start gap-2">
+                <span className="text-base-content/50 mt-1 font-bold">•</span>
+                <div>
+                  <strong className="text-base-content font-bold">Microsoft Excel:</strong> Intermediate – Pivot Tables, IF/AND/OR Functions, Lookup Functions, Data Cleaning, Data Analysis, Charts and Data Visualization.
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-base-content/50 mt-1 font-bold">•</span>
+                <div>
+                  <strong className="text-base-content font-bold">Microsoft Power BI:</strong> Basic/Intermediate – Data Visualization, Dashboard Creation and Data Reporting.
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-base-content/50 mt-1 font-bold">•</span>
+                <div>
+                  <strong className="text-base-content font-bold">Graphic Design:</strong> Canva, Adobe Photoshop (if applicable).
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-base-content/50 mt-1 font-bold">•</span>
+                <div>
+                  <strong className="text-base-content font-bold">Content Creation:</strong> Photography, Photo Editing and Visual Content Development.
+                </div>
+              </li>
+            </ul>
           </div>
 
           {/* Education */}
           <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Education &amp; Academic Background
-            </h2>
-            
-            {/* BRAC University */}
-            <div className="mb-3">
-              <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
-                <div>
-                  <strong className="text-xs sm:text-sm font-bold text-base-content block">
-                    Bachelor of Business Administration (BBA)
-                  </strong>
-                  <span className="text-[11px] sm:text-xs text-base-content/80">
-                    BRAC Business School, BRAC University • Dhaka, Bangladesh
-                  </span>
-                </div>
-                <div className="xs:text-right">
-                  <span className="text-[11px] sm:text-xs font-semibold text-base-content block">October 2024 - October 2028</span>
-                  <span className="text-[11px] sm:text-xs font-bold text-[var(--accent-solid)]">Completed 6 Semesters</span>
-                </div>
-              </div>
-              <p className="text-[11px] sm:text-xs text-base-content/75 mt-0.5">
-                <strong>Major:</strong> Finance | <strong>Focus:</strong> Financial Management, Corporate Valuation &amp; Data Analysis
-              </p>
-            </div>
-
-            {/* Viqarunnisa Noon School and College */}
-            <div className="pt-2 border-t border-base-content/10">
-              <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
-                <div>
-                  <strong className="text-xs sm:text-sm font-bold text-base-content block">
-                    Viqarunnisa Noon School and College (VNSC)
-                  </strong>
-                  <span className="text-[11px] sm:text-xs text-base-content/80">
-                    Dhaka, Bangladesh
-                  </span>
-                </div>
-              </div>
-              <p className="text-[11px] sm:text-xs text-base-content/75 mt-0.5">
-                • Higher Secondary Certificate (HSC) / College<br />
-                • Secondary School Certificate (SSC) / High School Diploma
-              </p>
-            </div>
-          </div>
-
-          {/* Leadership & Campus Experience */}
-          <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Club Leadership &amp; Creative Experience
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-3">
+              EDUCATION
             </h2>
             
             <div className="space-y-3">
-              {campusAndLeadershipExperience.map((exp, idx) => (
-                <div key={idx}>
-                  <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
+              {/* BRAC University */}
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                  <div className="flex items-start gap-2">
+                    <span className="text-base-content/50 mt-1 font-bold">•</span>
                     <div>
-                      <strong className="text-[11px] sm:text-xs md:text-sm font-bold text-base-content">
-                        {exp.role}
+                      <strong className="text-xs sm:text-sm font-bold text-base-content">
+                        Bachelor of Business Administration - BRAC University
                       </strong>
-                      <span className="text-[11px] sm:text-xs text-base-content/70 block font-medium">
-                        {exp.organization}
-                      </span>
                     </div>
-                    <span className="text-[10px] sm:text-xs font-medium text-base-content/60">
-                      {exp.period}
-                    </span>
                   </div>
-                  <ul className="list-disc list-inside space-y-0.5 text-[11px] sm:text-xs text-base-content/80 mt-1">
-                    {exp.responsibilities.slice(0, 2).map((r, rIdx) => (
-                      <li key={rIdx}>{r}</li>
-                    ))}
-                  </ul>
+                  <span className="text-[11px] sm:text-xs font-semibold text-base-content/70 sm:text-right pl-4 sm:pl-0">
+                    OCT 2024- Present
+                  </span>
                 </div>
-              ))}
+                <div className="pl-4 sm:pl-4 text-xs sm:text-sm text-base-content/80 mt-0.5">
+                  3rd Year - Major in Finance , Minor in Business Analytics | <strong className="text-[var(--accent-solid)] font-bold">CGPA - 3.71/4.00</strong>
+                </div>
+              </div>
+
+              {/* HSC - Viqarunnisa */}
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                  <div className="flex items-start gap-2">
+                    <span className="text-base-content/50 mt-1 font-bold">•</span>
+                    <div>
+                      <strong className="text-xs sm:text-sm font-bold text-base-content">
+                        HSC - Viqarunnisa Noon School &amp; College | Science
+                      </strong>
+                    </div>
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-semibold text-base-content/70 sm:text-right pl-4 sm:pl-0">
+                    2023
+                  </span>
+                </div>
+              </div>
+
+              {/* SSC - Viqarunnisa */}
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-0.5">
+                  <div className="flex items-start gap-2">
+                    <span className="text-base-content/50 mt-1 font-bold">•</span>
+                    <div>
+                      <strong className="text-xs sm:text-sm font-bold text-base-content">
+                        SSC - Viqarunnisa Noon School &amp; College | Science
+                      </strong>
+                    </div>
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-semibold text-base-content/70 sm:text-right pl-4 sm:pl-0">
+                    2021
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Selected Projects */}
+          {/* Certifications */}
           <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Selected Projects &amp; Initiatives
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-2.5">
+              CERTIFICATIONS
             </h2>
-            <div className="space-y-3">
-              {flagshipProjects.slice(0, 3).map((proj, idx) => (
-                <div key={idx}>
-                  <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
-                    <strong className="text-[11px] sm:text-xs md:text-sm font-bold text-base-content">
-                      {proj.title}
+            <ul className="space-y-1.5 text-xs sm:text-sm text-base-content/85">
+              <li className="flex items-center gap-2">
+                <span className="text-base-content/50 font-bold">•</span>
+                <span>Grameenphone Academy</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-base-content/50 font-bold">•</span>
+                <span>Brac University Business and Economics Forum</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-base-content/50 font-bold">•</span>
+                <span>SME Foundation</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Academic Projects */}
+          <div>
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-3">
+              ACADEMIC PROJECTS
+            </h2>
+            
+            <div className="space-y-3 text-xs sm:text-sm text-base-content/85 leading-relaxed">
+              {/* Project 1 */}
+              <div>
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold block">
+                      A Term Paper on Corporate and Commercial Law
                     </strong>
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-[var(--accent-solid)] shrink-0">
-                      {proj.tag}
+                    <span className="text-base-content/75 block mt-0.5">
+                      Contract, Misrepresentation, Fiduciary Duty and Agency in Corporate and Commercial Disputes: A Case-Based Analysis
                     </span>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-base-content/80 mt-0.5 leading-relaxed">
-                    {proj.summary}
-                  </p>
-                  <p className="text-[10px] sm:text-[11px] text-base-content/60 mt-0.5">
-                    <strong>Impact &amp; Toolkit:</strong> {proj.results[0]} | Tools: {proj.tools.join(", ")}
-                  </p>
                 </div>
-              ))}
+              </div>
+
+              {/* Project 2 */}
+              <div>
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold block">
+                      Personal Branding through Linkedin
+                    </strong>
+                    <span className="text-base-content/75 block mt-0.5">
+                      How university students can strategically use LinkedIn for personal branding, professional networking and career development to enhance visibility.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div>
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold block">
+                      Understanding Cyberbullying in the Digital Era
+                    </strong>
+                    <span className="text-base-content/75 block mt-0.5">
+                      Examines the causes and consequences of cyberbullying among Bangladeshi youth, focusing on its effects on mental health, academic performance, and social relationships.
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Skills & Software */}
+          {/* Extracurricular Involvement */}
           <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Core Competencies &amp; Toolkit
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-3">
+              EXTRACURRICULAR INVOLVEMENT
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] sm:text-xs text-base-content/80">
+            
+            <div className="space-y-3 text-xs sm:text-sm text-base-content/85 leading-relaxed">
               <div>
-                <strong>Finance &amp; Analytics:</strong> Financial Statement Analysis, Ratio Modeling, Working with Numbers, MS Excel, Logical Problem Solving.
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold block">
+                      Senior Executive at Brac University Business And Economics Forum
+                    </strong>
+                    <span className="text-base-content/75 block mt-0.5">
+                      Contributed to the forum's branding and promotional activities through creative content development and visual communication.
+                    </span>
+                  </div>
+                </div>
               </div>
+
               <div>
-                <strong>Creative Design:</strong> Graphic Designing, Poster &amp; Banner Creation, Visual Hierarchy, Canva Pro, Brand Aesthetics.
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold">
+                      Member of Judges &amp; Experts team of Hult Prize 2026-2027
+                    </strong>
+                  </div>
+                </div>
               </div>
+
               <div>
-                <strong>Writing &amp; Comms:</strong> Article Writing, Business Report Drafting, Executive Presentations, Pitch Decks.
+                <div className="flex items-start gap-2">
+                  <span className="text-base-content/50 mt-0.5 font-bold">•</span>
+                  <div>
+                    <strong className="text-base-content font-bold">
+                      Creative &amp; Content Designer at BracU Mongol Tori
+                    </strong>
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>Leadership &amp; Clubs:</strong> Senior Executive (BUBEF), Entrepreneurship Development (EDF), Event Logistics, Team Coordination.
-              </div>
+            </div>
+          </div>
+
+          {/* References */}
+          <div>
+            <h2 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-base-content border-b border-base-content/20 pb-1 mb-3">
+              REFERENCES
+            </h2>
+            
+            <div className="text-xs sm:text-sm text-base-content/85 leading-relaxed pl-3 border-l-2 border-[var(--accent-solid)]">
+              <strong className="text-base-content font-bold block text-sm">
+                Nadia Afroze Disha
+              </strong>
+              <span className="block text-base-content/80">Lecturer</span>
+              <span className="block text-base-content/80">BRAC Business School</span>
+              <a 
+                href="mailto:afroze.disha@bracu.ac.bd" 
+                className="text-[var(--accent-solid)] font-semibold hover:underline block mt-0.5"
+              >
+                afroze.disha@bracu.ac.bd
+              </a>
             </div>
           </div>
 

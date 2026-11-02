@@ -97,6 +97,25 @@ export default function Contact({ preselectedRole }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const subject = encodeURIComponent(
+      `Portfolio Inquiry: ${formData.inquiryType} from ${formData.name} (${formData.organization})`
+    );
+    const body = encodeURIComponent(
+      `Hello Tasnim,\n\n` +
+      `You have received a new inquiry via your portfolio website:\n\n` +
+      `From: ${formData.name}\n` +
+      `Organization: ${formData.organization}\n` +
+      `Email: ${formData.email}\n` +
+      `Focus Area: ${formData.inquiryType}\n\n` +
+      `Message Details:\n${formData.message}\n\n` +
+      `---------------------------------\n` +
+      `Sent via Tasnim Binte Noor Portfolio`
+    );
+
+    // Direct routing to her Gmail account
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+
     setIsSubmitted(true);
     triggerConfetti();
   };
@@ -150,7 +169,7 @@ export default function Contact({ preselectedRole }) {
                   </div>
                   <div className="overflow-hidden min-w-0">
                     <div className="text-[10px] sm:text-[11px] font-semibold text-base-content/50 uppercase">
-                      University Email
+                      Email
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-base-content truncate">
                       {personalInfo.email}
@@ -183,7 +202,7 @@ export default function Contact({ preselectedRole }) {
                   </div>
                   <div className="overflow-hidden min-w-0">
                     <div className="text-[10px] sm:text-[11px] font-semibold text-base-content/50 uppercase">
-                      Direct Contact / WhatsApp
+                      Direct Contact
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-base-content truncate">
                       {personalInfo.phone}
@@ -206,13 +225,7 @@ export default function Contact({ preselectedRole }) {
                 </div>
               </div>
 
-              {/* Status Note */}
-              <div className="mt-5 sm:mt-6 p-3 sm:p-3.5 rounded-2xl bg-[var(--accent-subtle)] border border-[var(--accent-border)] text-xs text-base-content/80">
-                <span className="font-semibold text-[var(--accent-solid)] block mb-0.5">
-                  ⚡ Fast Response Time:
-                </span>
-                Active on LinkedIn and email daily. Typically responds within 12–24 business hours.
-              </div>
+              
             </div>
 
           </div>
@@ -227,17 +240,28 @@ export default function Contact({ preselectedRole }) {
                     <FiCheckCircle className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-base-content mb-2">
-                    Inquiry Received!
+                    Inquiry Prepared for Tasnim's Gmail!
                   </h3>
                   <p className="text-xs sm:text-sm text-base-content/75 max-w-md mb-6 leading-relaxed">
-                    Thank you for reaching out! Tasnim has received your notification and will review the details promptly.
+                    Your message has been addressed directly to <strong className="text-base-content font-semibold">{personalInfo.email}</strong>. If your email application didn't open automatically, you can dispatch it directly via Gmail:
                   </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-2.5 rounded-xl bg-base-200 hover:bg-base-300 text-xs font-semibold text-base-content transition-all"
-                  >
-                    Send Another Message
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${encodeURIComponent(`Portfolio Inquiry: ${formData.inquiryType} from ${formData.name}`)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.organization})\nEmail: ${formData.email}\nFocus Area: ${formData.inquiryType}\n\n${formData.message}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#EA4335] text-white text-xs font-semibold hover:opacity-95 shadow-md shadow-[#EA4335]/20 flex items-center justify-center gap-2 transition-all"
+                    >
+                      <FiMail className="w-4 h-4 shrink-0" />
+                      <span>Open in Gmail Webmail</span>
+                    </a>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-base-200 hover:bg-base-300 text-xs font-semibold text-base-content transition-all"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

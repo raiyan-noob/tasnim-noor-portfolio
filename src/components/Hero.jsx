@@ -5,6 +5,7 @@ import {
   FiFileText, 
   FiArrowRight, 
   FiLinkedin, 
+  FiFacebook,
   FiMail, 
   FiAward, 
   FiTrendingUp, 
@@ -30,7 +31,7 @@ const iconMap = {
 
 export default function Hero({ onOpenResume }) {
   return (
-    <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-24 pb-4 sm:pt-32 sm:pb-6 md:pt-36 md:pb-8 overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="ambient-glow w-72 h-72 sm:w-[500px] sm:h-[500px] -top-32 -left-20" />
       <div className="ambient-glow w-64 h-64 sm:w-[450px] sm:h-[450px] top-60 -right-20 opacity-20" />
@@ -60,38 +61,24 @@ export default function Hero({ onOpenResume }) {
 
             {/* Subtitle / Positioning Statement */}
             <p className="text-sm sm:text-base md:text-lg text-base-content/80 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl">
-              Hello! I am <strong className="text-base-content font-semibold">{personalInfo.fullName}</strong> — a business student majoring in <span className="text-[var(--accent-solid)] font-semibold">{personalInfo.major}</span> at <strong className="text-base-content font-semibold">{personalInfo.university}</strong> (completed {personalInfo.completedSemesters} semesters). Alumna of <strong className="text-base-content font-semibold">Viqarunnisa Noon School &amp; College</strong>. Senior Executive at <strong className="text-base-content font-semibold">BUBEF</strong> and Graphic Designer at <strong className="text-base-content font-semibold">EDF</strong>. Passionate about numbers, data analysis, and crafting impactful visual designs.
+              Hello! I am <strong className="text-base-content font-semibold">{personalInfo.fullName}</strong> — a business student majoring in <span className="text-[var(--accent-solid)] font-semibold">{personalInfo.major}</span> at <strong className="text-base-content font-semibold">{personalInfo.university}</strong>. Alumna of <strong className="text-base-content font-semibold">Viqarunnisa Noon School &amp; College</strong>. Senior Executive at <strong className="text-base-content font-semibold">BUBEF</strong> and Graphic Designer at <strong className="text-base-content font-semibold">EDF</strong>. Passionate about numbers, data analysis, and crafting impactful visual designs.
             </p>
 
             {/* Primary Action Buttons */}
             <div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-2.5 sm:gap-4 w-full sm:w-auto mb-8 sm:mb-10">
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[var(--accent-from)] via-[var(--accent-via)] to-[var(--accent-to)] text-white hover:opacity-95 shadow-lg shadow-[var(--accent-glow)] transition-all transform hover:-translate-y-0.5 text-center"
-              >
-                <span>Explore Projects &amp; Cases</span>
-                <FiArrowRight className="w-4 h-4 shrink-0" />
-              </a>
-
+            
               <button
                 onClick={onOpenResume}
                 className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-base-200 hover:bg-base-300 text-base-content border border-base-content/10 transition-all transform hover:-translate-y-0.5 text-center"
               >
                 <FiFileText className="w-4 h-4 text-[var(--accent-solid)] shrink-0" />
-                <span>Interactive Resume</span>
+                <span>My Resume</span>
               </button>
 
-              <a
-                href="#opportunity-matcher"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-[var(--accent-subtle)] text-[var(--accent-solid)] border border-[var(--accent-border)] hover:bg-[var(--accent-from)] hover:text-white transition-all transform hover:-translate-y-0.5 text-center"
-              >
-                <FiZap className="w-4 h-4 shrink-0" />
-                <span>Recruiter Matcher</span>
-              </a>
             </div>
 
-            {/* Quick Social & Direct Proof Links */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-base-content/70">
+            {/* Quick Social & Direct Proof Links (with Facebook added!) */}
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-base-content/70">
               <span className="text-[11px] sm:text-xs uppercase tracking-wider font-semibold text-base-content/50">
                 Direct Connect:
               </span>
@@ -101,8 +88,19 @@ export default function Hero({ onOpenResume }) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 hover:text-[#0A66C2] transition-colors font-medium"
               >
-                <FiLinkedin className="w-4 h-4 shrink-0" />
-                <span>LinkedIn Profile</span>
+                <FiLinkedin className="w-4 h-4 shrink-0 text-[#0A66C2]" />
+                <span>LinkedIn</span>
+                <FiExternalLink className="w-3 h-3 text-base-content/40 shrink-0" />
+              </a>
+              <span className="text-base-content/20 hidden xs:inline">•</span>
+              <a
+                href={personalInfo.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-[#1877F2] transition-colors font-medium"
+              >
+                <FiFacebook className="w-4 h-4 shrink-0 text-[#1877F2]" />
+                <span>Facebook</span>
                 <FiExternalLink className="w-3 h-3 text-base-content/40 shrink-0" />
               </a>
               <span className="text-base-content/20 hidden xs:inline">•</span>
@@ -127,7 +125,7 @@ export default function Hero({ onOpenResume }) {
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                     <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-base-content/70">
-                      Recruiter Profile Snapshot
+                      My Profile Snapshot
                     </span>
                   </div>
                   <span className="badge badge-sm badge-outline text-[10px] sm:text-[11px] font-mono">
@@ -148,10 +146,7 @@ export default function Hero({ onOpenResume }) {
                       </div>
                     </div>
                     {/* Verified Pill */}
-                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-base-100 border border-[var(--accent-border)] text-[var(--accent-solid)] text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1 whitespace-nowrap">
-                      <FiCheckCircle className="w-3 h-3 shrink-0 text-emerald-500" />
-                      <span>6 Semesters Complete</span>
-                    </div>
+                    
                   </div>
 
                   <h3 className="font-display font-bold text-lg sm:text-2xl text-base-content">
@@ -171,12 +166,9 @@ export default function Hero({ onOpenResume }) {
                   </div>
                   <div className="flex items-center justify-between p-2 sm:p-2.5 rounded-xl bg-base-200/60 border border-base-content/5 text-xs">
                     <span className="text-base-content/70 font-medium">Cumulative GPA:</span>
-                    <span className="font-bold text-[var(--accent-solid)]">3.82 / 4.00</span>
+                    <span className="font-bold text-[var(--accent-solid)]">3.71 / 4.00</span>
                   </div>
-                  <div className="flex items-center justify-between p-2 sm:p-2.5 rounded-xl bg-base-200/60 border border-base-content/5 text-xs">
-                    <span className="text-base-content/70 font-medium">Club Roles:</span>
-                    <span className="font-semibold text-base-content">Senior Executive (BUBEF) • EDF</span>
-                  </div>
+                 
                 </div>
 
                 {/* Quick Action in Card */}
@@ -191,10 +183,19 @@ export default function Hero({ onOpenResume }) {
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2 sm:py-2.5 px-3 rounded-xl bg-[#0A66C2]/10 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white text-xs font-semibold transition-all flex items-center gap-1.5"
+                    className="py-2 sm:py-2.5 px-2.5 rounded-xl bg-[#0A66C2]/10 hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white text-xs font-semibold transition-all flex items-center gap-1"
+                    title="LinkedIn"
                   >
                     <FiLinkedin className="w-3.5 h-3.5 shrink-0" />
-                    <span>LinkedIn</span>
+                  </a>
+                  <a
+                    href={personalInfo.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2 sm:py-2.5 px-2.5 rounded-xl bg-[#1877F2]/10 hover:bg-[#1877F2] text-[#1877F2] hover:text-white text-xs font-semibold transition-all flex items-center gap-1"
+                    title="Facebook"
+                  >
+                    <FiFacebook className="w-3.5 h-3.5 shrink-0" />
                   </a>
                 </div>
 
@@ -207,37 +208,7 @@ export default function Hero({ onOpenResume }) {
 
         </div>
 
-        {/* Bottom Hero Stats Strip */}
-        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-base-content/10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
-            {heroStats.map((stat, idx) => {
-              const IconComp = iconMap[stat.icon] || FiBriefcase;
-              return (
-                <div
-                  key={idx}
-                  className={`glass-card p-3 sm:p-4 rounded-2xl flex flex-col justify-between text-left ${
-                    idx === 4 ? "col-span-2 sm:col-span-1" : ""
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] sm:text-xs text-base-content/60 font-medium">
-                      {stat.label}
-                    </span>
-                    <IconComp className="w-4 h-4 text-[var(--accent-solid)] shrink-0" />
-                  </div>
-                  <div>
-                    <div className="font-display font-extrabold text-xl sm:text-2xl text-base-content tracking-tight">
-                      {stat.value}
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-base-content/50 truncate mt-0.5">
-                      {stat.detail}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        
 
       </div>
     </section>

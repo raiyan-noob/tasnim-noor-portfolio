@@ -6,7 +6,7 @@
  */
 
 export const personalInfo = {
-  fullName: "Tasnim Binte Noor Nabila",
+  fullName: "Tasnim Binte Noor",
   preferredName: "Tasnim Binte Noor",
   nickname: "Nabila",
   title: "BBA Student in Finance & Creative Designer",
@@ -28,9 +28,10 @@ export const personalInfo = {
   // Real Contact Info from LinkedIn
   email: "tasnimbinten@gmail.com",
   secondaryEmail: "tasnim.binte.noor@g.bracu.ac.bd",
-  phone: "+880 1700-000000",
+  phone: "+880 1703-004827",
   whatsapp: "+8801700000000",
   linkedin: "https://www.linkedin.com/in/tasnim-binte-noor-nabila/",
+  facebook: "https://www.facebook.com/tasnim.noor.7505468",
   
   // Real Profile Photo added by user
   avatar: "/nabila.jpeg",
@@ -38,7 +39,6 @@ export const personalInfo = {
 };
 
 export const heroStats = [
-  { label: "Completed Semesters", value: "6 / 8", detail: "BRAC Business School", icon: "FiBookOpen" },
   { label: "Academic Major", value: "Finance", detail: "Analytical & Quantitative", icon: "FiTrendingUp" },
   { label: "Campus Leadership", value: "3 Clubs", detail: "BUBEF • EDF • Mongol Tori", icon: "FiUsers" },
   { label: "Core Competency", value: "Creative", detail: "Graphic Design & Strategy", icon: "FiFeather" },
@@ -79,20 +79,19 @@ export const academicJourney = {
   field: "Business Administration and Management, General",
   major: "Finance",
   duration: "October 2024 - October 2028",
-  currentMilestone: "Completed 6 Semesters (Junior/Senior Transition)",
   cgpa: "3.80 / 4.00",
   honors: ["Academic Merit Standing", "Active Campus Leader"],
 
   previousEducation: [
     {
       institution: "Viqarunnisa Noon School and College",
-      credential: "Higher Secondary Certificate (HSC) / College",
+      credential: "Higher Secondary Certificate (HSC)",
       location: "Dhaka, Bangladesh",
       detail: "Premier academic institution known for competitive discipline and holistic excellence."
     },
     {
       institution: "Viqarunnisa Noon School and College",
-      credential: "Secondary School Certificate (SSC) / High School Diploma",
+      credential: "Secondary School Certificate (SSC)",
       location: "Dhaka, Bangladesh",
       detail: "Graduated with top academic standing and active participation in school co-curriculars."
     }
@@ -126,14 +125,14 @@ export const academicJourney = {
   ],
 
   notableCourses: [
-    { name: "Financial Management & Corporate Finance", code: "FIN301", grade: "A" },
-    { name: "Financial Accounting & Reporting", code: "ACT201", grade: "A" },
-    { name: "Business Statistics & Decision Analysis", code: "STA201", grade: "A" },
-    { name: "Managerial Economics & Microeconomics", code: "ECO101", grade: "A" },
-    { name: "Macroeconomics & Monetary Policy", code: "ECO104", grade: "A-" },
-    { name: "Entrepreneurship & Venture Development", code: "MGT340", grade: "A" },
-    { name: "Organizational Behavior & Team Leadership", code: "MGT320", grade: "A" },
-    { name: "Professional Business Writing & Pitching", code: "ENG103", grade: "A" }
+    { name: "Financial Environment & Banking", code: "FIN201", grade: "A-" },
+    { name: "Business Law & Corporate Governance", code: "BUS204", grade: "A-" },
+    { name: "Computer Applications in Business", code: "MSC221", grade: "A" },
+    { name: "Business Communication", code: "BUS201", grade: "A" },
+    { name: "Marketing Management", code: "MKT301", grade: "A-" },
+    { name: "Financial Accounting", code: "ACT201", grade: "A" },
+    { name: "Human Resource Management", code: "MGT301", grade: "A" },
+    { name: "Elements Of Statistics & Probability", code: "STA201", grade: "A-" }
   ]
 };
 
@@ -158,7 +157,7 @@ export const campusAndLeadershipExperience = [
     ]
   },
   {
-    role: "Graphic Designer & Creative Executive",
+    role: "Graphic Designer",
     organization: "BRAC University Entrepreneurship Development Forum (EDF)",
     period: "2025 - Present",
     location: "BRAC University, Dhaka",
@@ -196,88 +195,107 @@ export const campusAndLeadershipExperience = [
 
 export const flagshipProjects = [
   {
-    id: "edf-seminar-branding",
-    title: "Entrepreneurship Seminar & Forum Visual Branding Campaign",
-    category: "Creative Designing & Marketing",
-    tag: "EDF Creative Project",
-    summary: "Complete visual identity and promotional design campaign for a premier entrepreneurship seminar organized by BRAC University Entrepreneurship Development Forum (EDF).",
-    challenge: "Overcoming student information overload on campus to create an eye-catching, professional poster that conveyed event value and maximized seminar registration.",
+    id: "commercial-law-term-paper",
+    title: "Corporate & Commercial Law: Contract, Misrepresentation, Fiduciary Duty & Agency",
+    category: "Corporate Law & Commercial Disputes",
+    tag: "BUS204 Term Paper",
+    course: "BUS204: Business Law and Corporate Governance",
+    faculty: "Mr. Faiyaz Iqbal",
+    date: "September 2026",
+    summary: "Comprehensive case-based legal research analyzing contract formation, the objective test of agreement, remedies for fraudulent and negligent misrepresentation under the 1967 Act, strict fiduciary obligations, and apparent agency authority.",
+    challenge: "Synthesizing seminal English commercial authorities (RTS Flexible Systems, Smith New Court, Royscot Trust, FHR European Ventures, Freeman & Lockyer) into an actionable corporate governance and risk allocation framework.",
     strategy: [
-      "Designed a bold, modern visual concept combining clean typography with dynamic corporate graphic elements.",
-      "Optimized layout hierarchy to spotlight keynote speakers, seminar topics, and registration deadlines at first glance.",
-      "Created multi-format digital assets tailored for Facebook event pages, Instagram stories, and on-campus digital displays."
+      "Analyzed contract formation and the objective test when operations precede formal agreement execution (RTS Flexible Systems v Molkerei Alois Müller).",
+      "Compared fraudulent vs. negligent misrepresentation damages rules and the statutory 'fiction of fraud' under the 1967 Act (Smith New Court, Royscot Trust v Rogerson).",
+      "Evaluated strict fiduciary liability, the 'no-profit' & 'no-conflict' rules, and proprietary constructive trust remedies for secret commissions (Regal Hastings, Cook v Deeks, FHR European Ventures).",
+      "Deconstructed actual vs. ostensible authority in corporate transactions, evaluating how institutional acquiescence binds principals (Freeman & Lockyer, Hely-Hutchinson)."
     ],
     results: [
-      "Delivered high-acclaimed seminar posters commended by university faculty advisors and club leadership.",
-      "Helped drive packed seminar attendance with over 300+ registered university attendees.",
-      "Established standard creative design templates adopted for subsequent EDF university workshops."
+      "Authored an in-depth 28+ page legal analysis praised for doctrinal clarity and research rigor.",
+      "Established essential corporate risk takeaways: pre-performance contract execution, factual diligence, and independent governance consent.",
+      "Achieved top academic evaluation in Business Law & Corporate Governance (BUS204)."
     ],
-    tools: ["Canva Pro", "Graphic Design Suite", "Visual Hierarchy", "Digital Marketing Layouts"],
-    metrics: { roi: "300+ Attendees", reach: "Campus-Wide", sample: "Multi-Asset Suite" },
+    tools: ["Case Law Analysis", "Corporate Risk Allocation", "Statutory Interpretation", "Fiduciary Governance"],
+    metrics: { roi: "Academic Distinction", reach: "BRAC Business School", sample: "8 Landmark Cases" },
+    gradient: "from-blue-600 via-indigo-600 to-cyan-500"
+  },
+  {
+    id: "linkedin-personal-branding-paper",
+    title: "Personal Branding Through LinkedIn: Strategic Positioning & Signaling",
+    category: "Human Resource Management & Digital Identity",
+    tag: "MGT301 Term Paper",
+    course: "MGT301: Human Resource Management",
+    faculty: "Ms. Shahreen Shabnam (Adjunct Faculty)",
+    team: "The Midnight Munchers (Tasnim Binte Noor, Fahmid Shahriar, Sushnato Drobonti)",
+    date: "September 2026",
+    summary: "Strategic research on how university students cultivate an authentic professional identity on LinkedIn, navigate recruiter search algorithms, and leverage weak ties in a skills-based hiring market.",
+    challenge: "Transforming the perception of LinkedIn from a passive digital CV into an active personal branding and career-building platform backed by behavioral economics and sociological theories.",
+    strategy: [
+      "Synthesized Ries & Trout's Positioning Theory and Goffman's Impression Management into high-converting headline and summary frameworks.",
+      "Applied Michael Spence's Signaling Theory to showcase how academic projects and verifiable skills serve as credible proxies for competence.",
+      "Incorporated Granovetter's Strength of Weak Ties and Social Capital Theory for high-value professional network expansion.",
+      "Evaluated modern talent acquisition shifts toward skills-based hiring and AI-driven candidate screening (37% enterprise adoption)."
+    ],
+    results: [
+      "Delivered a comprehensive 38+ page strategic report with practical positioning tables and engagement guidelines.",
+      "Demonstrated that complete LinkedIn profiles achieve 21x more views and 36x higher recruiter direct-message rates.",
+      "Formulated a 5-stage career opportunity framework linking skill building with targeted application strategies."
+    ],
+    tools: ["Positioning Theory", "Signaling Theory", "Social Capital Analysis", "Talent Acquisition / ATS"],
+    metrics: { roi: "Research Distinction", reach: "HRM Department", sample: "Multi-Theory Synthesis" },
+    gradient: "from-indigo-600 via-violet-600 to-purple-500"
+  },
+  {
+    id: "cyberbullying-empirical-research",
+    title: "Understanding Cyberbullying in the Digital Era: Empirical Research & Analysis",
+    category: "Business Communication & Research",
+    tag: "BUS201 Term Paper",
+    course: "BUS201: Business Communication & Research",
+    faculty: "Nadia Afroze Disha (Lecturer)",
+    team: "Tasnim Binte Noor, Fariya Shahriyar, Zaima Rahman, Humaira Raisa, Samia Arifin",
+    date: "May 2026",
+    summary: "Comprehensive mixed-methods empirical study examining the prevalence, emotional trauma, institutional gaps, and social dynamics of cyberbullying among young adults in Bangladesh.",
+    challenge: "Collecting and analyzing primary empirical survey data on a sensitive topic characterized by severe underreporting, bystander apathy, and cultural normalization.",
+    strategy: [
+      "Executed primary quantitative survey across Bangladeshi university students, cross-analyzed with global data from WHO, UNICEF, and OECD.",
+      "Applied Bandura's Social Learning Theory, Suler's Online Disinhibition Effect, and Cohen & Felson's Routine Activity Theory (guardianship gap).",
+      "Identified severe mental health outcomes: low self-esteem (47.8%), anxiety (26.1%), and universal agreement on impaired academic performance (100%).",
+      "Structured a multi-stakeholder intervention framework spanning digital literacy education, policy enforcement, and platform accountability."
+    ],
+    results: [
+      "Published an exhaustive term paper featuring 11 analytical comparison tables and 7 conceptual workflow figures.",
+      "Uncovered critical local insights: 54.5% direct exposure, 61.9% Facebook prevalence, and 63.6% stranger/unidentifiable aggressors.",
+      "Commended for robust research methodology, data visualization, and actionable multi-sectoral recommendations."
+    ],
+    tools: ["Primary Survey Methodology", "Statistical Analysis", "Psychological Frameworks", "Policy Design"],
+    metrics: { roi: "100% Correlation", reach: "Youth in BD", sample: "Primary Survey + WHO Lit" },
+    gradient: "from-rose-500 via-pink-600 to-purple-600"
+  },
+  {
+    id: "edf-visual-branding-creative-suite",
+    title: "Visual Branding, Seminar Posters & Creative Graphic Design Portfolio",
+    category: "Creative Graphic Design",
+    tag: "Design Showcase",
+    organization: "",
+    role: "Graphic Designer & Creative Executive",
+    summary: "High-impact brand identity design, event typography, and multi-format promotional assets created for premier entrepreneurship seminars, workshops, and campus activations.",
+    challenge: "Overcoming visual clutter and student distraction on campus to engineer eye-catching, informative posters that drove event engagement and registration.",
+    strategy: [
+      "Engineered bold visual concepts fusing modern typography, clear contrast hierarchies, and branded geometric iconography.",
+      "Produced tailored asset suites for Facebook event banners, Instagram stories, on-campus physical print posters, and presentation slides.",
+      "Maintained strict brand coherence across all forum collateral to establish a polished, professional identity.",
+      "Iterated designs based on stakeholder feedback, ensuring clear visibility for guest speaker profiles and schedule timelines."
+    ],
+    results: [
+      "Created headline seminar posters celebrated across campus by university faculty and forum leadership.",
+      "Drove landmark attendance records with over 300+ registered university participants per flagship event.",
+      "Standardized digital templates adopted for ongoing club workshops and marketing campaigns."
+    ],
+    tools: ["Adobe Photoshop", "Canva Pro", "Visual Hierarchy", "Digital Marketing Layouts", "Typography"],
+    metrics: { roi: "Published Designs", reach: "Campus-Wide", sample: "Multi-Format Suite" },
     gradient: "from-pink-500 via-rose-500 to-amber-500"
-  },
-  {
-    id: "financial-valuation-case",
-    title: "Corporate Capital Structure & Financial Feasibility Modeling",
-    category: "Finance & Data Analysis",
-    tag: "Finance Major Project",
-    summary: "Quantitative financial statement analysis, ratio evaluation, and discounted cash flow modeling to determine corporate health and investment viability.",
-    challenge: "Analyzing historical financial data to assess liquidity, debt solvency, and capital allocation under volatile market conditions.",
-    strategy: [
-      "Constructed multi-year financial models in Microsoft Excel incorporating DuPont analysis, liquidity ratios, and profitability margins.",
-      "Performed sensitivity analysis on cost of capital (WACC) and projected debt-to-equity ratios under varying interest rate scenarios.",
-      "Drafted comprehensive executive briefing translating complex numerical models into actionable strategic recommendations."
-    ],
-    results: [
-      "Achieved Grade 'A' distinction in Corporate Financial Management.",
-      "Praised by faculty for rigorous approach to numbers, data integrity, and clear logical problem-solving.",
-      "Formulated valuation framework applicable for real-world corporate financial assessment."
-    ],
-    tools: ["Microsoft Excel", "Financial Statement Analysis", "DuPont Modeling", "DCF Valuation"],
-    metrics: { roi: "Grade A", reach: "BBS Evaluation", sample: "Multi-Year Data" },
-    gradient: "from-cyan-500 via-blue-500 to-indigo-500"
-  },
-  {
-    id: "bubef-business-summit",
-    title: "BUBEF Annual Business & Economics Forum Operations",
-    category: "Club Leadership & Operations",
-    tag: "BUBEF Executive Initiative",
-    summary: "End-to-end event planning, stakeholder coordination, and stage management for flagship business and economic panels at BRAC University.",
-    challenge: "Coordinating multi-speaker panel logistics, VIP corporate hospitality, and student participant flows under tight schedules.",
-    strategy: [
-      "Organized executive committee workflows dividing tasks into corporate relations, on-ground registration, and tech stage management.",
-      "Coordinated with industry professionals and guest lecturers to align speaking agendas with current national economic topics.",
-      "Supervised event day operations ensuring punctual transitions, audience Q&A management, and media coverage."
-    ],
-    results: [
-      "Executed flawless flagship seminar sessions recognized by BRAC Business School faculty.",
-      "Served over 1 year as Senior Executive contributing to club growth and membership retention.",
-      "Strengthened BUBEF's reputation as a premier platform bridging academia with corporate business leaders."
-    ],
-    tools: ["Executive Event Logistics", "Stakeholder Communication", "Budget Management", "Team Leadership"],
-    metrics: { roi: "1+ Year Impact", reach: "500+ Students", sample: "BUBEF Forum" },
-    gradient: "from-purple-500 via-indigo-500 to-pink-500"
-  },
-  {
-    id: "culinary-creative-venture",
-    title: "Culinary Entrepreneurship & Creative Detail Management",
-    category: "Entrepreneurship & Lifestyle",
-    tag: "Personal Passion & Creativity",
-    summary: "Channeling a personal passion for cooking into creative experimentation, recipe standardization, and artistic presentation.",
-    challenge: "Balancing precision in measurements and timing with artistic aesthetic presentation and sensory harmony.",
-    strategy: [
-      "Applied structured analytical methodology to recipe testing, portion budgeting, and ingredient cost optimization.",
-      "Honed fine attention to detail, presentation plating, and creative color harmony reflecting artistic design sensibilities.",
-      "Demonstrated how passion outside the classroom reinforces patience, meticulousness, and creative problem-solving in business."
-    ],
-    results: [
-      "Direct reflection of creativity, patience, and attention to detail in everyday professional life.",
-      "Bridges creative thinking with practical discipline and quantitative precision."
-    ],
-    tools: ["Creative Presentation", "Portion Costing", "Meticulous Attention to Detail", "Aesthetic Plating"],
-    metrics: { roi: "Attention to Detail", reach: "Creative Balance", sample: "Precision Focus" },
-    gradient: "from-amber-500 via-orange-500 to-rose-500"
   }
+  
 ];
 
 export const skillCategories = [
@@ -286,12 +304,12 @@ export const skillCategories = [
     icon: "FiPieChart",
     color: "from-blue-500 to-cyan-600",
     skills: [
-      { name: "Financial Statement & Ratio Analysis", level: 92 },
-      { name: "Working with Numbers & Data Modeling", level: 94 },
-      { name: "Microsoft Excel (Financial Formulas, Pivot)", level: 90 },
-      { name: "Logical Problem Solving", level: 95 },
-      { name: "Budgeting & Cost Allocation", level: 88 },
-      { name: "Business Economics & Valuation", level: 86 }
+      { name: "Financial Statement & Ratio Analysis", tier: "Advanced", context: "DuPont, Liquidity & Solvency Diagnostics" },
+      { name: "Working with Numbers & Data Modeling", tier: "Core Specialization", context: "Empirical Balance Sheets & Cash Flow" },
+      { name: "Microsoft Excel (Financial Formulas)", tier: "Practical Mastery", context: "Formulas, Pivot Tables, Sensitivity Tables" },
+      { name: "Logical Problem Solving", tier: "Analytical Core", context: "Quantitative Diagnostics & Case Structuring" },
+      { name: "Budgeting & Cost Allocation", tier: "Applied Focus", context: "Portion Costing & Financial Planning" },
+      { name: "Business Economics & Valuation", tier: "Academic Distinction", context: "Macro & Micro Decision Frameworks" }
     ]
   },
   {
@@ -299,12 +317,11 @@ export const skillCategories = [
     icon: "FiFeather",
     color: "from-rose-500 to-pink-600",
     skills: [
-      { name: "Graphic Designing & Poster Creation", level: 95 },
-      { name: "Visual Identity & Social Media Banners", level: 92 },
-      { name: "Canva Pro & Design Layouts", level: 96 },
-      { name: "Color Harmony & Aesthetic Presentation", level: 94 },
-      { name: "Event Promotional Asset Design", level: 90 },
-      { name: "Typography & Visual Hierarchy", level: 88 }
+      { name: "Graphic Designing & Event Posters", tier: "Expert Level", context: "Campus-Wide Seminar Visual Campaigns" },
+      { name: "Visual Identity & Social Media Banners", tier: "Creative Focus", context: "Facebook, Instagram & Digital Displays" },
+      { name: "Canva Pro & Layout Architecture", tier: "Advanced Mastery", context: "Multi-Format Promotional Suites" },
+      { name: "Color Harmony & Aesthetic Presentation", tier: "Design Intuition", context: "Visual Hierarchy & Contrast Balance" },
+      { name: "Typography & Brand Communications", tier: "Specialized", context: "Executive Slides & Editorial Styling" }
     ]
   },
   {
@@ -312,23 +329,23 @@ export const skillCategories = [
     icon: "FiUsers",
     color: "from-purple-500 to-indigo-600",
     skills: [
-      { name: "Executive Club Management (BUBEF)", level: 95 },
-      { name: "Entrepreneurship Development (EDF)", level: 92 },
-      { name: "Seminar & Event Logistics", level: 90 },
-      { name: "Cross-Functional Teamwork", level: 94 },
-      { name: "Speaker & Guest Coordination", level: 88 }
+      { name: "Executive Club Management (BUBEF)", tier: "Senior Executive", context: "Flagship Forum & Operations Leadership" },
+      { name: "Entrepreneurship Development (EDF)", tier: "Creative Executive", context: "Seminar Planning & Student Engagement" },
+      { name: "Event & Stage Logistics Coordination", tier: "Hands-On", context: "Large-Scale Summit Execution (300–500+)" },
+      { name: "Cross-Functional Team Collaboration", tier: "Leadership", context: "Inter-Departmental Projects & Mentorship" },
+      { name: "Industry Speaker & Guest Relations", tier: "Professional", context: "Corporate Dignitary Hospitality" }
     ]
   },
   {
-    name: "Writing, Communication & Soft Skills",
+    name: "Writing, Communication & AI Tools",
     icon: "FiTarget",
     color: "from-amber-500 to-orange-600",
     skills: [
-      { name: "Article Writing & Structured Essays", level: 92 },
-      { name: "Professional Business Communication", level: 90 },
-      { name: "Attention to Detail & Organization", level: 96 },
-      { name: "Adaptability & Practical Thinking", level: 94 },
-      { name: "Creative Storytelling", level: 90 }
+      { name: "Academic & Business Article Writing", tier: "High Distinction", context: "Structured Term Papers & Research Reports" },
+      { name: "Professional Business Pitching", tier: "Advanced", context: "Executive Presentation & Stakeholder Memos" },
+      { name: "AI-Powered Communication & Productivity", tier: "Certified (GP Academy)", context: "AI-Assisted Research & Personal Branding" },
+      { name: "Meticulous Attention to Detail", tier: "Core Strength", context: "Data Integrity & Precision Execution" },
+      { name: "Adaptability & Strategic Thinking", tier: "Essential", context: "Fast-Paced Campus & Corporate Challenges" }
     ]
   }
 ];
@@ -397,37 +414,71 @@ export const recruiterMatcherRoles = [
 
 export const achievements = [
   {
-    title: "Senior Executive Appointment",
+    id: "bubef-senior-executive-promotion",
+    title: "Official Promotion: Senior Executive at BUBEF",
     organization: "BRAC University Business & Economics Forum (BUBEF)",
-    date: "November 2025 - Present (1+ Year)",
-    description: "Serving over a year in key executive leadership, coordinating high-profile business seminars, academic summits, and cross-departmental student initiatives.",
+    date: "November 2025 – Present (1+ Year)",
+    category: "Executive Leadership",
+    highlight: "Senior Executive",
+    description: "Officially elevated to Senior Executive at BUBEF in recognition of proven operational excellence, consistent dedication, event leadership, and peer collaboration across campus.",
     icon: "FiAward",
-    highlight: "Executive Leadership"
+    linkedinUrl: "https://lnkd.in/p/g5kaVXrz",
+    badge: "Official Promotion",
+    keyTakeaway: "Demonstrated leadership growth and team stewardship across 1+ year of executive club management."
   },
   {
-    title: "Graphic Designer & Creative Lead",
-    organization: "BRAC University Entrepreneurship Development Forum (EDF)",
-    date: "2025 - Present",
-    description: "Designed key seminar posters and visual brand assets that successfully communicated entrepreneurship forum objectives to university audiences.",
-    icon: "FiFeather",
-    highlight: "Creative Impact"
-  },
-  {
-    title: "General Member Selection",
-    organization: "BRACU Mongol Tori",
-    date: "July 2026 - Present",
-    description: "Selected as general member of BRAC University's premier robotics and rover innovation team, supporting collaborative cross-disciplinary student projects.",
+    id: "sme-foundation-entrepreneurship-cert",
+    title: "3-Day Business Planning & Strategy Certification",
+    organization: "Small & Medium Enterprise Foundation (SME Foundation) & BBS",
+    date: "18–20 June 2026",
+    category: "Entrepreneurship & Venture Strategy",
+    highlight: "SME Foundation Certified",
+    description: "Completed intensive 3-day boot camp on Strategic Business Planning Fundamentals, Business Model Canvas development, financial forecasting, and preparing bankable business proposals with SME industry leaders.",
     icon: "FiZap",
-    highlight: "Team Innovation"
+    linkedinUrl: "https://lnkd.in/p/gsMqPV9T",
+    badge: "Government & Academic Certification",
+    keyTakeaway: "Mastered building bankable business plans, financial models, and go-to-market strategies."
   },
   {
-    title: "Alumna of Viqarunnisa Noon School & College",
-    organization: "Viqarunnisa Noon School & College (VNSC)",
-    date: "Dhaka, Bangladesh",
-    description: "Completed secondary and higher secondary education from one of Bangladesh's most celebrated and prestigious educational institutions.",
+    id: "gp-academy-ai-masterclasses",
+    title: "AI-Powered Communication & Personal Branding Masterclasses",
+    organization: "Grameenphone Academy (GP Academy)",
+    date: "2026",
+    category: "AI & Digital Skills",
+    highlight: "3 Masterclasses Completed",
+    description: "Successfully completed 3 specialized masterclasses at Grameenphone Academy: AI-Powered Communication, Network Smarter with AI, and Personal Branding in the AI Era mentored by Nabeelah Enayet Prova.",
+    icon: "FiCheckCircle",
+    linkedinUrl: "https://lnkd.in/p/gbmZ2Fa3",
+    badge: "AI Future-Ready Certified",
+    keyTakeaway: "Leveraging generative AI tools for enhanced professional networking, messaging, and digital branding."
+  },
+  {
+    id: "uddokta-101-volunteer-appreciation",
+    title: "Certificate of Appreciation — 'Uddokta 101' Initiative",
+    organization: "BRAC Bank PLC & BRAC Business School (BRAC University)",
+    date: "July 2026",
+    category: "Community Impact & Social Leadership",
+    highlight: "Social Impact Honor",
+    description: "Awarded Certificate of Appreciation for contributing as a dedicated volunteer at 'Uddokta 101', supporting entrepreneurship training and witnessing firsthand the drive of future innovators.",
     icon: "FiStar",
-    highlight: "Academic Prestige"
-  }
+    linkedinUrl: "https://lnkd.in/p/geiu_cEF",
+    badge: "BRAC Bank Recognition",
+    keyTakeaway: "Fostered community entrepreneurship and empowered grassroots business development."
+  },
+  {
+    id: "corporate-curveball-volunteer-honor",
+    title: "Volunteer Recognition — 'Corporate Curveball: Navigate the Unexpected'",
+    organization: "BRAC University Business & Economics Forum (BUBEF)",
+    date: "2026",
+    category: "Corporate Event Operations",
+    highlight: "BUBEF Flagship Event",
+    description: "Recognized for vital volunteer contribution supporting BUBEF's high-profile corporate event, including sessions like 'Data Decoded' alongside industry leaders such as Md. Azimuddin Khan.",
+    icon: "FiAward",
+    linkedinUrl: "https://lnkd.in/p/gqC5tWw5",
+    badge: "Event Leadership",
+    keyTakeaway: "Coordinated corporate dignitary logistics and live audience engagement."
+  },
+  
 ];
 
 export const testimonials = [
@@ -454,36 +505,7 @@ export const testimonials = [
   }
 ];
 
-export const certifications = [
-  {
-    title: "Entrepreneurship Development Program",
-    issuer: "BRAC University EDF",
-    date: "2025",
-    badge: "Club Certification",
-    description: "Hands-on participation in business venture planning, creative pitch design, and seminar coordination."
-  },
-  {
-    title: "Financial Statement Analysis & Modeling",
-    issuer: "Corporate Finance Study & Workshops",
-    date: "2024",
-    badge: "Finance Core",
-    description: "Mastered working with numbers, balance sheet diagnostics, DuPont ratio analysis, and forecasting."
-  },
-  {
-    title: "Graphic Design & Visual Communications",
-    issuer: "Design & Media Workshop",
-    date: "2024",
-    badge: "Creative Design",
-    description: "Visual hierarchy, seminar poster creation, event branding, and digital asset layout."
-  },
-  {
-    title: "Article Writing & Research Methodology",
-    issuer: "Academic & Business Communications",
-    date: "2024",
-    badge: "Content & Writing",
-    description: "Trained in structured business writing, problem statement formulation, and executive reporting."
-  }
-];
+
 
 export const resumeDetails = {
   summary: "Motivated 6th-semester BBA student at BRAC University majoring in Finance with strong background from Viqarunnisa Noon School and College. Combines logical problem solving and numerical confidence with a proven passion for graphic design and executive club leadership at BUBEF and EDF. Seeking internship and ambassador opportunities in dynamic corporate and financial environments.",

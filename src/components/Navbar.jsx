@@ -23,38 +23,76 @@ const palettes = [
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("night");
+  const [theme, setTheme] = useState("light");
   const [currentPalette, setCurrentPalette] = useState("rose");
   const [paletteDropdownOpen, setPaletteDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    // Restore persisted theme and palette from localStorage
+    try {
+      const savedTheme = localStorage.getItem("tasnim_theme") || "light";
+      const savedPalette = localStorage.getItem("tasnim_palette") || "rose";
+      setTheme(savedTheme);
+      setCurrentPalette(savedPalette);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.documentElement.setAttribute("data-palette", savedPalette);
+    } catch {
+      // Fallback
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Detect current visible section on scroll
+      const sections = ["about", "academics", "experience", "projects", "skills", "achievements", "contact"];
+      const scrollPosition = window.scrollY + 180;
+
+      let current = "";
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el && el.offsetTop <= scrollPosition) {
+          current = sectionId;
+        }
+      }
+      setActiveSection(current);
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
-    const nextTheme = theme === "night" ? "light" : "night";
+    const nextTheme = theme === "light" ? "night" : "light";
     setTheme(nextTheme);
     document.documentElement.setAttribute("data-theme", nextTheme);
+    try {
+      localStorage.setItem("tasnim_theme", nextTheme);
+    } catch {
+      // localStorage may be disabled
+    }
   };
 
   const changePalette = (paletteId) => {
     setCurrentPalette(paletteId);
     document.documentElement.setAttribute("data-palette", paletteId);
     setPaletteDropdownOpen(false);
+    try {
+      localStorage.setItem("tasnim_palette", paletteId);
+    } catch {
+      // localStorage may be disabled
+    }
   };
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Academics", href: "#academics" },
-    { name: "Experience", href: "#experience" },
-    { name: "Case Studies", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Honors", href: "#achievements" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Academics", href: "#academics", id: "academics" },
+    { name: "Experience", href: "#experience", id: "experience" },
+    { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Achievements", href: "#achievements", id: "achievements" },
+    { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
@@ -76,49 +114,41 @@ export default function Navbar({ onOpenResume }) {
               </div>
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-display font-bold text-sm sm:text-base md:text-lg tracking-tight group-hover:text-[var(--accent-from)] transition-colors truncate max-w-[125px] xs:max-w-[170px] sm:max-w-none">
+              <span className="font-display font-bold text-sm sm:text-base md:text-md tracking-tight group-hover:text-[var(--accent-from)] transition-colors max-w-[125px] xs:max-w-[170px] sm:max-w-none truncate">
                 {personalInfo.fullName}
               </span>
               <span className="text-[10px] sm:text-xs text-base-content/60 font-medium hidden md:inline-block">
-                BBA • BRAC Business School
+                BBA • BRAC University
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links with Active Indicator and Distinct Hover State */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-2.5 xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium text-base-content/80 hover:text-base-content hover:bg-base-200/60 transition-all"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setActiveSection(link.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs xl:text-sm font-medium transition-all duration-200 relative ${
+                    isActive
+                      ? "bg-[var(--accent-subtle)] text-[var(--accent-solid)] font-semibold border border-[var(--accent-border)]/50 shadow-xs hover:bg-gradient-to-r hover:from-[var(--accent-from)] hover:to-[var(--accent-to)] hover:text-white hover:border-transparent hover:shadow-md hover:shadow-[var(--accent-glow)]"
+                      : "text-base-content/75 hover:text-base-content hover:bg-base-200/80 hover:text-[var(--accent-solid)]"
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-[var(--accent-solid)]" />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Right Action Icons & Recruiter CTAs */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Quick Matcher Shortcut (tablets & up) */}
-            <a
-              href="#opportunity-matcher"
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[var(--accent-subtle)] text-[var(--accent-solid)] border border-[var(--accent-border)] hover:bg-[var(--accent-from)] hover:text-white transition-all shadow-sm"
-              title="Jump to Recruiter Role Matcher"
-            >
-              <FiZap className="w-3.5 h-3.5 animate-pulse" />
-              <span>Role Matcher</span>
-            </a>
-
-            {/* Resume Button (sm & up) */}
-            <button
-              onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-base-200 hover:bg-base-300 text-base-content border border-base-content/10 transition-all"
-            >
-              <FiFileText className="w-3.5 h-3.5" />
-              <span>Resume</span>
-            </button>
-
             {/* Accent Palette Dropdown */}
             <div className="relative">
               <button
@@ -166,24 +196,24 @@ export default function Navbar({ onOpenResume }) {
             <button
               onClick={toggleTheme}
               className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center bg-base-200 hover:bg-base-300 border border-base-content/10 text-base-content transition-all"
-              title={theme === "night" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
               aria-label="Toggle Theme Mode"
             >
-              {theme === "night" ? (
-                <FiSun className="w-4 h-4 text-amber-400" />
-              ) : (
+              {theme === "light" ? (
                 <FiMoon className="w-4 h-4 text-indigo-500" />
+              ) : (
+                <FiSun className="w-4 h-4 text-amber-400" />
               )}
             </button>
 
-            {/* "Hire Me" Button (desktop only) */}
-            <a
-              href="#contact"
-              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] text-white hover:opacity-95 shadow-md shadow-[var(--accent-glow)] transition-all"
+            {/* Resume Button */}
+            <button
+              onClick={onOpenResume}
+              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] text-white hover:opacity-95 shadow-md shadow-[var(--accent-glow)] transition-all"
             >
-              <FiMail className="w-3.5 h-3.5" />
-              <span>Hire Tasnim</span>
-            </a>
+              <FiFileText className="w-3.5 h-3.5" />
+              <span>Resume</span>
+            </button>
 
             {/* Mobile Menu Hamburger */}
             <button
@@ -200,16 +230,26 @@ export default function Navbar({ onOpenResume }) {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-3 p-4 glass-panel rounded-2xl border border-base-content/10 shadow-2xl animate-in slide-in-from-top-4 duration-200 max-h-[80vh] overflow-y-auto">
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3.5 py-2.5 rounded-xl text-sm font-medium text-base-content/85 hover:text-base-content hover:bg-base-200/70 transition-all"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => {
+                      setActiveSection(link.id);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                      isActive
+                        ? "bg-[var(--accent-subtle)] text-[var(--accent-solid)] font-semibold border border-[var(--accent-border)]/50"
+                        : "text-base-content/85 hover:text-base-content hover:bg-base-200/70"
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
               
               <div className="pt-3 mt-2 border-t border-base-content/10 flex flex-col gap-2">
                 <button

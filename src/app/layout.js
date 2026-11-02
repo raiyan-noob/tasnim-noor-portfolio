@@ -24,8 +24,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="dark" data-palette="rose" className="scroll-smooth">
-      <body className="min-h-screen antialiased selection:bg-rose-500 selection:text-white">
+    <html lang="en" data-theme="light" data-palette="rose" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const savedTheme = localStorage.getItem('tasnim_theme') || 'light';
+                const savedPalette = localStorage.getItem('tasnim_palette') || 'rose';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.documentElement.setAttribute('data-palette', savedPalette);
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen antialiased selection:bg-[var(--accent-solid)] selection:text-white">
         {children}
       </body>
     </html>

@@ -76,7 +76,7 @@ export default function About() {
             <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-base-content/10 shadow-xl text-left">
               <h3 className="font-display font-bold text-base sm:text-lg text-base-content mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[var(--accent-solid)]" />
-                <span>Why Recruit Tasnim for Your Organization?</span>
+                <span>Why Recruit me for Your Organization?</span>
               </h3>
               
               <ul className="space-y-3.5 sm:space-y-4 text-xs sm:text-sm text-base-content/80">
@@ -94,13 +94,7 @@ export default function About() {
                     Over 1 year as Senior Executive at BUBEF coordinating flagship economics conferences and industry panels.
                   </div>
                 </li>
-                <li className="flex items-start gap-2.5 sm:gap-3">
-                  <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-base-content block font-semibold">Elite Institutional Pedigree:</strong>
-                    Strong disciplinary foundations from Viqarunnisa Noon School &amp; College and 6 completed semesters at BRAC Business School.
-                  </div>
-                </li>
+               
                 <li className="flex items-start gap-2.5 sm:gap-3">
                   <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <div>

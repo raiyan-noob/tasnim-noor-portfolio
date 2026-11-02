@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import OpportunityMatcher from "@/components/OpportunityMatcher";
 import About from "@/components/About";
 import Academics from "@/components/Academics";
 import Experience from "@/components/Experience";
@@ -30,7 +29,6 @@ export default function Home() {
       {/* Main Content Sections */}
       <main className="flex-1 w-full">
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
-        <OpportunityMatcher onSelectRole={handleRoleSelectFromMatcher} />
         <About />
         <Academics />
         <Experience />

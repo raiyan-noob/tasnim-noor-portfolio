@@ -1,7 +1,7 @@
 "use client";
 
 import { personalInfo } from "@/data/portfolioData";
-import { FiArrowUp, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiArrowUp, FiLinkedin, FiFacebook, FiMail } from "react-icons/fi";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -25,7 +25,7 @@ export default function Footer() {
                 {personalInfo.fullName}
               </div>
               <div className="text-[11px] sm:text-xs text-base-content/60">
-                BBA Undergraduate (6 Semesters Complete) • {personalInfo.businessSchool}
+                BBA Undergraduate • BRAC University
               </div>
             </div>
           </div>
@@ -51,10 +51,13 @@ export default function Footer() {
             </a>
             <span>•</span>
             <a
-              href="#opportunity-matcher"
-              className="hover:text-[var(--accent-solid)] transition-colors"
+              href={personalInfo.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5"
             >
-              Role Matcher
+              <FiFacebook className="w-3.5 h-3.5 text-[#1877F2]" />
+              <span>Facebook</span>
             </a>
           </div>
 

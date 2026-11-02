@@ -1,17 +1,19 @@
 "use client";
 
-import { skillCategories, softwareTools, certifications } from "@/data/portfolioData";
+import { skillCategories, softwareTools } from "@/data/portfolioData";
 import { 
   FiTarget, 
-  FiBarChart2, 
+  FiPieChart, 
   FiFeather, 
   FiUsers, 
-  FiShield
+  FiCheckCircle,
+  FiZap,
+  FiAward
 } from "react-icons/fi";
 
 const categoryIconMap = {
   FiTarget: FiTarget,
-  FiBarChart2: FiBarChart2,
+  FiPieChart: FiPieChart,
   FiFeather: FiFeather,
   FiUsers: FiUsers
 };
@@ -27,46 +29,76 @@ export default function Skills() {
             Competency Matrix
           </span>
           <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-base-content tracking-tight">
-            Skills, Business Toolkit &amp; Credentials
+            Core Competencies &amp; Toolkit
           </h2>
-          <p className="text-xs sm:text-base text-base-content/70 mt-2 sm:mt-3 max-w-2xl">
-            A balanced mix of quantitative data analysis, qualitative consumer psychology, visual presentation craftsmanship, and campus leadership capabilities.
+          <p className="text-xs sm:text-base text-base-content/70 mt-2 sm:mt-3 max-w-2xl leading-relaxed">
+            A balanced professional matrix combining financial statement analysis and numerical logic with creative graphic design, campus leadership, and AI-enabled business communication.
           </p>
         </div>
 
-        {/* 4 Skill Categories Grid with Progress Bars */}
+        {/* 4 Skill Categories Grid: Modern Competency Matrix without Percentage/Loading Bars */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-20 text-left">
           {skillCategories.map((cat, idx) => {
             const IconComp = categoryIconMap[cat.icon] || FiTarget;
             return (
               <div
                 key={idx}
-                className="glass-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-base-content/10 shadow-lg"
+                className="glass-card p-5 sm:p-7 rounded-2xl sm:rounded-3xl border border-base-content/10 shadow-lg relative overflow-hidden flex flex-col justify-between hover:border-[var(--accent-border)] transition-all"
               >
-                <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--accent-subtle)] text-[var(--accent-solid)] flex items-center justify-center shrink-0">
-                    <IconComp className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div>
+                  {/* Category Header */}
+                  <div className="flex items-center justify-between pb-4 mb-4 sm:mb-5 border-b border-base-content/10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-[var(--accent-subtle)] text-[var(--accent-solid)] flex items-center justify-center shrink-0 shadow-sm">
+                        <IconComp className="w-5 h-5" />
+                      </div>
+                      <h3 className="font-display font-bold text-base sm:text-lg text-base-content">
+                        {cat.name}
+                      </h3>
+                    </div>
+                    <span className="badge badge-sm badge-ghost text-[10px] sm:text-[11px] font-mono text-base-content/50">
+                      {cat.skills.length} Competencies
+                    </span>
                   </div>
-                  <h3 className="font-display font-bold text-base sm:text-lg text-base-content">
-                    {cat.name}
-                  </h3>
+
+                  {/* Skills Competency Chips */}
+                  <div className="space-y-2.5 sm:space-y-3">
+                    {cat.skills.map((skill, sIdx) => (
+                      <div 
+                        key={sIdx}
+                        className="p-3 rounded-xl sm:rounded-2xl bg-base-100/70 border border-base-content/5 hover:border-[var(--accent-border)] hover:bg-base-100 transition-all group flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3"
+                      >
+                        <div className="flex items-start gap-2.5 min-w-0">
+                          <FiCheckCircle className="w-4 h-4 text-[var(--accent-solid)] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <div className="min-w-0">
+                            <span className="font-semibold text-xs sm:text-sm text-base-content block group-hover:text-[var(--accent-solid)] transition-colors truncate">
+                              {skill.name}
+                            </span>
+                            {skill.context && (
+                              <span className="text-[10px] sm:text-[11px] text-base-content/60 block line-clamp-1">
+                                {skill.context}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Tier / Proficiency Badge */}
+                        <div className="shrink-0 pl-6 sm:pl-0">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-semibold bg-[var(--accent-subtle)] text-[var(--accent-solid)] border border-[var(--accent-border)]">
+                            {skill.tier}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="space-y-3.5 sm:space-y-4">
-                  {cat.skills.map((skill, sIdx) => (
-                    <div key={sIdx}>
-                      <div className="flex items-center justify-between text-xs font-medium text-base-content mb-1.5">
-                        <span className="truncate pr-2">{skill.name}</span>
-                        <span className="text-base-content/60 font-mono shrink-0">{skill.level}%</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-base-200 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] transition-all duration-1000"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                <div className="pt-4 mt-4 border-t border-base-content/5 flex items-center justify-between text-[11px] text-base-content/50">
+                  <span>Applied across academic &amp; club initiatives</span>
+                  <span className="flex items-center gap-1 font-medium text-[var(--accent-solid)]">
+                    <FiZap className="w-3 h-3" />
+                    <span>Active Domain</span>
+                  </span>
                 </div>
               </div>
             );
@@ -74,77 +106,35 @@ export default function Skills() {
         </div>
 
         {/* Software & Analytical Tools Grid */}
-        <div className="mb-12 sm:mb-20 text-left">
-          <div className="mb-6 sm:mb-8">
-            <h3 className="font-display font-bold text-lg sm:text-2xl text-base-content">
-              Digital Software &amp; Analytical Suite
-            </h3>
-            <p className="text-xs sm:text-sm text-base-content/60 mt-1">
-              Proficient across everyday business modeling, survey analytics, and design workflows.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3.5">
-            {softwareTools.map((tool, idx) => (
-              <div
-                key={idx}
-                className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-base-100 border border-base-content/10 shadow-sm flex flex-col justify-between hover:border-[var(--accent-border)] transition-all group"
-              >
-                <div>
-                  <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-base-content/50 mb-1">
-                    {tool.category}
-                  </div>
-                  <div className="font-display font-bold text-xs sm:text-sm text-base-content group-hover:text-[var(--accent-solid)] transition-colors">
-                    {tool.name}
-                  </div>
-                </div>
-                <div className="mt-2.5 sm:mt-3 inline-block">
-                  <span className="badge badge-xs badge-ghost text-[9px] sm:text-[10px] font-medium text-[var(--accent-solid)]">
-                    {tool.proficiency}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications & Professional Accreditations */}
         <div className="text-left">
           <div className="mb-6 sm:mb-8">
             <h3 className="font-display font-bold text-lg sm:text-2xl text-base-content flex items-center gap-2">
-              <FiShield className="text-[var(--accent-solid)]" />
-              <span>Certifications &amp; Upskilling</span>
+              <FiAward className="text-[var(--accent-solid)]" />
+              <span>Digital Software &amp; Analytical Suite</span>
             </h3>
             <p className="text-xs sm:text-sm text-base-content/60 mt-1">
-              Continuous learning outside university curriculum through recognized global programs.
+              Everyday tools utilized for corporate financial models, creative visual campaigns, and executive presentations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-            {certifications.map((cert, idx) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-3">
+            {softwareTools.map((tool, idx) => (
               <div
                 key={idx}
-                className="glass-card p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-base-content/10 flex flex-col justify-between shadow-sm"
+                className="p-3 rounded-xl sm:rounded-2xl bg-base-100 border border-base-content/10 shadow-sm flex flex-col justify-between hover:border-[var(--accent-border)] hover:shadow-md transition-all group"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="badge badge-sm badge-outline text-[9px] sm:text-[10px] font-semibold text-[var(--accent-solid)] border-[var(--accent-border)]">
-                      {cert.badge}
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] font-mono text-base-content/50">
-                      {cert.date}
-                    </span>
+                  <div className="text-[9px] font-mono uppercase tracking-wider text-base-content/50 mb-1 truncate">
+                    {tool.category}
                   </div>
-
-                  <h4 className="font-display font-bold text-xs sm:text-sm text-base-content mb-1">
-                    {cert.title}
-                  </h4>
-                  <div className="text-[11px] sm:text-xs font-semibold text-base-content/70 mb-1.5 sm:mb-2">
-                    {cert.issuer}
+                  <div className="font-display font-bold text-xs sm:text-sm text-base-content group-hover:text-[var(--accent-solid)] transition-colors truncate">
+                    {tool.name}
                   </div>
-                  <p className="text-[11px] sm:text-xs text-base-content/60 leading-relaxed">
-                    {cert.description}
-                  </p>
+                </div>
+                <div className="mt-2.5">
+                  <span className="inline-block px-2 py-0.5 rounded-md text-[9px] font-semibold bg-base-200 text-base-content/70">
+                    {tool.proficiency}
+                  </span>
                 </div>
               </div>
             ))}

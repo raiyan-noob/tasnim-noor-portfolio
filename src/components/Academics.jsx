@@ -23,9 +23,7 @@ export default function Academics() {
           <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-base-content tracking-tight">
             Education &amp; Academic Rigor
           </h2>
-          <p className="text-xs sm:text-base text-base-content/70 mt-2 sm:mt-3 max-w-2xl">
-            Educational foundation built upon rigorous discipline at Viqarunnisa Noon School &amp; College and specialized financial analysis at BRAC Business School.
-          </p>
+        
         </div>
 
         {/* Institutions Grid: BRAC University + Viqarunnisa Noon */}
@@ -41,9 +39,7 @@ export default function Academics() {
                   <FiAward className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-[var(--accent-subtle)] text-[var(--accent-solid)] text-[10px] sm:text-xs font-semibold mb-1">
-                    {academicJourney.currentMilestone}
-                  </div>
+                
                   <h3 className="font-display font-bold text-lg sm:text-2xl text-base-content">
                     {academicJourney.degree}
                   </h3>
@@ -109,67 +105,7 @@ export default function Academics() {
 
         </div>
 
-        {/* 6-Semester Progression Roadmap */}
-        <div className="mb-12 sm:mb-16">
-          <div className="text-left mb-6 sm:mb-8">
-            <h3 className="font-display font-bold text-lg sm:text-xl text-base-content flex items-center gap-2">
-              <FiLayers className="text-[var(--accent-solid)]" />
-              <span>Curriculum Roadmap &amp; Cumulative Progression</span>
-            </h3>
-            <p className="text-xs text-base-content/60 mt-1">
-              Demonstrating the step-by-step transition from foundational principles to advanced financial analysis.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-left">
-            {academicJourney.semesterMilestones.map((milestone, idx) => {
-              const isCompleted = idx < 3;
-              return (
-                <div
-                  key={idx}
-                  className={`p-5 sm:p-6 rounded-2xl transition-all relative flex flex-col justify-between ${
-                    isCompleted
-                      ? "glass-card border-t-4 border-t-[var(--accent-solid)]"
-                      : "bg-base-200/40 border border-dashed border-base-content/20"
-                  }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
-                        isCompleted ? "bg-[var(--accent-subtle)] text-[var(--accent-solid)]" : "bg-base-300 text-base-content/50"
-                      }`}>
-                        {milestone.badge}
-                      </span>
-                      {isCompleted ? (
-                        <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-emerald-500">
-                          <FiCheckCircle className="w-3.5 h-3.5" />
-                          <span>Completed</span>
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-base-content/50">
-                          <FiClock className="w-3.5 h-3.5" />
-                          <span>Upcoming</span>
-                        </span>
-                      )}
-                    </div>
-
-                    <h4 className="font-display font-bold text-xs sm:text-base text-base-content mb-1.5 sm:mb-2 leading-snug">
-                      {milestone.semester}
-                    </h4>
-
-                    <p className="text-[11px] sm:text-xs text-base-content/70 mb-3 leading-relaxed">
-                      {milestone.focus}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-base-content/10 text-[10px] sm:text-[11px] text-[var(--accent-solid)] font-medium">
-                    ✨ {milestone.highlight}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        
 
         {/* Notable Coursework Grid */}
         <div>
