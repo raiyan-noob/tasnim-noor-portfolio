@@ -262,22 +262,7 @@ export default function Navbar({ onOpenResume }) {
                   <FiFileText className="w-4 h-4 text-[var(--accent-solid)]" />
                   <span>View &amp; Download Resume</span>
                 </button>
-                <a
-                  href="#opportunity-matcher"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-[var(--accent-subtle)] text-[var(--accent-solid)] border border-[var(--accent-border)] text-sm font-semibold flex items-center justify-center gap-2"
-                >
-                  <FiZap className="w-4 h-4" />
-                  <span>Recruiter Role Matcher</span>
-                </a>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-md"
-                >
-                  <FiMail className="w-4 h-4" />
-                  <span>Contact / Hire Tasnim</span>
-                </a>
+                
               </div>
             </div>
           </div>

@@ -239,7 +239,7 @@ export default function Contact({ preselectedRole }) {
                     <FiCheckCircle className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-base-content mb-2">
-                    Inquiry Prepared for Tasnim's Gmail!
+                    Inquiry Prepared for a direct mail!
                   </h3>
                   <p className="text-xs sm:text-sm text-base-content/75 max-w-md mb-6 leading-relaxed">
                     Your message has been addressed directly to <strong className="text-base-content font-semibold">{personalInfo.email}</strong>. If your email application didn't open automatically, you can dispatch it directly via Gmail:
@@ -362,7 +362,7 @@ export default function Contact({ preselectedRole }) {
                     className="w-full py-3.5 px-6 rounded-xl font-semibold text-xs sm:text-sm bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] text-white hover:opacity-95 shadow-md shadow-[var(--accent-glow)] flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 min-h-[46px] active:scale-98"
                   >
                     <FiSend className="w-4 h-4 shrink-0" />
-                    <span>Send Message to Tasnim</span>
+                    <span>Send Message</span>
                   </button>
                 </form>
               )}
