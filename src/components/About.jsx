@@ -2,10 +2,10 @@
 
 import { personalInfo, corePillars } from "@/data/portfolioData";
 import { 
-  FiTarget, 
   FiPieChart, 
+  FiFeather, 
   FiZap, 
-  FiHeart, 
+  FiTarget, 
   FiCheckCircle, 
   FiMapPin, 
   FiCoffee,
@@ -13,10 +13,10 @@ import {
 } from "react-icons/fi";
 
 const pillarIcons = {
-  FiTarget: FiTarget,
   FiPieChart: FiPieChart,
+  FiFeather: FiFeather,
   FiZap: FiZap,
-  FiHeart: FiHeart
+  FiTarget: FiTarget
 };
 
 export default function About() {
@@ -30,7 +30,7 @@ export default function About() {
             Professional Narrative
           </span>
           <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-base-content tracking-tight">
-            Driven by curiosity, backed by business fundamentals.
+            Numbers, Creativity &amp; Purposeful Leadership.
           </h2>
         </div>
 
@@ -40,19 +40,19 @@ export default function About() {
           {/* Main Story (7 cols) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-sm sm:text-base text-base-content/80 leading-relaxed text-left">
             <p className="text-base sm:text-lg text-base-content font-medium">
-              Over the course of completing <span className="text-[var(--accent-solid)] font-bold">6 rigorous semesters</span> at BRAC Business School, 
-              I have developed an affinity for unraveling <strong className="text-base-content font-semibold">what makes people buy, engage, and remain loyal to brands</strong>.
+              I am <strong className="text-base-content">{personalInfo.fullName}</strong>, a business student majoring in <span className="text-[var(--accent-solid)] font-bold">Finance at BRAC University</span> (having completed <span className="text-[var(--accent-solid)] font-bold">6 semesters</span>), with a strong ambition to turn academic knowledge into a high-impact professional career.
             </p>
 
             <p>
-              Business to me is neither purely creative nor purely quantitative — it lives at the intersection of both. 
-              Whether I am building sensitivity data tables in Microsoft Excel to forecast revenue or synthesizing qualitative focus group feedback to shape an FMCG launch campaign, 
-              my focus remains the same: <span className="text-base-content font-semibold">turning raw consumer signals into actionable, commercially viable strategies</span>.
+              I have a keen interest in <strong className="text-base-content font-semibold">creative designing</strong>, as I enjoy working on projects that allow me to combine creativity with practical thinking. At the same time, I am <strong className="text-base-content font-semibold">confident in my ability to work with numbers</strong>, analyze data, and approach complex problems logically.
             </p>
 
             <p>
-              Outside the lecture hall, I believe true business leadership is learned on the ground. Serving as an executive in the <strong className="text-base-content font-semibold">BRAC University Business Club (BUBaC)</strong> and representing major consumer platforms as a <strong className="text-base-content font-semibold">Campus Ambassador</strong>, 
-              I have pitched to corporate heads, mobilized hundreds of student attendees, and solved live pressure-cooker challenges.
+              Having completed both my secondary and higher secondary education at <strong className="text-base-content font-semibold">Viqarunnisa Noon School and College</strong>, I have cultivated a disciplined academic foundation. On campus at BRAC University, I serve as a <strong className="text-base-content font-semibold">Senior Executive at the BRAC University Business &amp; Economics Forum (BUBEF)</strong> (over a year of active service), contribute as a <strong className="text-base-content font-semibold">Graphic Designer for the Entrepreneurship Development Forum (EDF)</strong>, and participate as a general member of <strong className="text-base-content font-semibold">BRACU Mongol Tori</strong>.
+            </p>
+
+            <p className="italic text-xs sm:text-sm text-base-content/75 border-l-2 border-[var(--accent-solid)] pl-3.5 py-0.5">
+              &ldquo;Beyond academics and professional interests, I have a passion for culinary arts and cooking, which reflects my creativity, precision, and attention to detail in everyday life.&rdquo;
             </p>
 
             <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-base-content/70">
@@ -62,11 +62,11 @@ export default function About() {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <FiAward className="text-[var(--accent-solid)] w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
-                <span>Dean&apos;s Honor List</span>
+                <span>Alumna, Viqarunnisa Noon</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <FiCoffee className="text-[var(--accent-solid)] w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
-                <span>Case Solver &amp; Public Speaker</span>
+                <span>Culinary Arts &amp; Design Passion</span>
               </div>
             </div>
           </div>
@@ -76,36 +76,36 @@ export default function About() {
             <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-base-content/10 shadow-xl text-left">
               <h3 className="font-display font-bold text-base sm:text-lg text-base-content mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[var(--accent-solid)]" />
-                <span>Why Recruit Tasnim for Your Team?</span>
+                <span>Why Recruit Tasnim for Your Organization?</span>
               </h3>
               
               <ul className="space-y-3.5 sm:space-y-4 text-xs sm:text-sm text-base-content/80">
                 <li className="flex items-start gap-2.5 sm:gap-3">
                   <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-base-content block font-semibold">Ready to hit the ground running:</strong>
-                    Completed 6 semesters of core business curriculum, meaning immediate productivity with minimal onboarding friction.
+                    <strong className="text-base-content block font-semibold">Dual Analytical &amp; Creative Strengths:</strong>
+                    Combines numerical rigor (Finance Major) with visual communication skills (EDF Graphic Designer).
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5 sm:gap-3">
                   <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-base-content block font-semibold">Analytical rigor + Creative fluency:</strong>
-                    Equally comfortable building Excel financial models as designing viral social pitch decks and copywriting.
+                    <strong className="text-base-content block font-semibold">Senior Executive Track Record:</strong>
+                    Over 1 year as Senior Executive at BUBEF coordinating flagship economics conferences and industry panels.
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5 sm:gap-3">
                   <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-base-content block font-semibold">Proven youth influence &amp; outreach:</strong>
-                    Demonstrated ability to connect corporate brands directly with university demographics and drive conversions.
+                    <strong className="text-base-content block font-semibold">Elite Institutional Pedigree:</strong>
+                    Strong disciplinary foundations from Viqarunnisa Noon School &amp; College and 6 completed semesters at BRAC Business School.
                   </div>
                 </li>
                 <li className="flex items-start gap-2.5 sm:gap-3">
                   <FiCheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-base-content block font-semibold">High emotional intelligence (EQ):</strong>
-                    Dual focus on HRM fosters empathy, clear stakeholder negotiation, and seamless cross-functional team chemistry.
+                    <strong className="text-base-content block font-semibold">High Detail-Orientation &amp; Practical Thinking:</strong>
+                    Proven problem solver, article writer, and creative visual strategist ready for internship and management challenges.
                   </div>
                 </li>
               </ul>

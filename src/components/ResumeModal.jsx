@@ -28,7 +28,7 @@ export default function ResumeModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2 min-w-0">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span className="font-display font-bold text-xs sm:text-sm text-base-content truncate">
-              CV Preview • {personalInfo.fullName}
+              CV Preview • {personalInfo.preferredName}
             </span>
           </div>
 
@@ -61,10 +61,10 @@ export default function ResumeModal({ isOpen, onClose }) {
               {personalInfo.fullName}
             </h1>
             <p className="text-xs sm:text-base font-semibold text-[var(--accent-solid)] mt-0.5">
-              BBA Undergraduate (Completed 6 Semesters) • Marketing &amp; Human Resource Management
+              BBA Undergraduate (Major in Finance • Completed 6 Semesters) &amp; Graphic Designer
             </p>
             <p className="text-[11px] sm:text-xs text-base-content/70 mt-1">
-              BRAC Business School, BRAC University • Seeking Summer 2025/2026 Internships &amp; Youth Ambassador Roles
+              BRAC Business School, BRAC University • Alumna, Viqarunnisa Noon School and College
             </p>
 
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2.5 sm:mt-3 text-[11px] sm:text-xs text-base-content/75 font-medium">
@@ -73,8 +73,8 @@ export default function ResumeModal({ isOpen, onClose }) {
                 {personalInfo.location}
               </span>
               <span>•</span>
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1 hover:underline truncate">
-                <FiMail className="w-3 h-3 text-[var(--accent-solid)] shrink-0" />
+              <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-1 hover:underline text-[var(--accent-solid)] font-semibold">
+                <FiMail className="w-3 h-3 shrink-0" />
                 {personalInfo.email}
               </a>
               <span>•</span>
@@ -85,7 +85,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               <span>•</span>
               <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:underline text-[#0A66C2]">
                 <FiLinkedin className="w-3 h-3 shrink-0" />
-                LinkedIn
+                linkedin.com/in/tasnim-binte-noor-nabila
               </a>
             </div>
           </div>
@@ -96,49 +96,64 @@ export default function ResumeModal({ isOpen, onClose }) {
               Professional Summary
             </h2>
             <p className="text-[11px] sm:text-xs md:text-sm text-base-content/85 leading-relaxed">
-              Analytical and proactive 6th-semester BBA undergraduate at BRAC Business School (CGPA: 3.82/4.00) dual-concentrating in Marketing and Human Resource Management. 
-              Demonstrated acumen in consumer behavior research, strategic campaign formulation, and financial feasibility modeling. Proven campus leader with hands-on 
-              experience orchestrating national business competitions for 500+ participants and driving 30%+ student user conversions as a corporate campus ambassador.
+              Business student majoring in Finance at BRAC University (completed 6 semesters) with a strong ambition to turn academic knowledge into a successful professional career. Combines confidence in working with numbers, data analysis, and logical problem-solving with a proven flair for creative graphic design and visual communication. Experienced Senior Executive at BUBEF and Graphic Designer at EDF with disciplined foundations from Viqarunnisa Noon School and College.
             </p>
           </div>
 
           {/* Education */}
           <div>
             <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Education &amp; Academic Honors
+              Education &amp; Academic Background
             </h2>
-            <div className="flex flex-col xs:flex-row justify-between items-start mb-1 gap-1">
-              <div>
-                <strong className="text-xs sm:text-sm font-bold text-base-content block">
-                  Bachelor of Business Administration (BBA)
-                </strong>
-                <span className="text-[11px] sm:text-xs text-base-content/80">
-                  BRAC Business School, BRAC University • Dhaka, Bangladesh
-                </span>
+            
+            {/* BRAC University */}
+            <div className="mb-3">
+              <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
+                <div>
+                  <strong className="text-xs sm:text-sm font-bold text-base-content block">
+                    Bachelor of Business Administration (BBA)
+                  </strong>
+                  <span className="text-[11px] sm:text-xs text-base-content/80">
+                    BRAC Business School, BRAC University • Dhaka, Bangladesh
+                  </span>
+                </div>
+                <div className="xs:text-right">
+                  <span className="text-[11px] sm:text-xs font-semibold text-base-content block">October 2024 - October 2028</span>
+                  <span className="text-[11px] sm:text-xs font-bold text-[var(--accent-solid)]">Completed 6 Semesters</span>
+                </div>
               </div>
-              <div className="xs:text-right">
-                <span className="text-[11px] sm:text-xs font-semibold text-base-content block">2022 - Present</span>
-                <span className="text-[11px] sm:text-xs font-bold text-[var(--accent-solid)]">CGPA: 3.82 / 4.00</span>
-              </div>
+              <p className="text-[11px] sm:text-xs text-base-content/75 mt-0.5">
+                <strong>Major:</strong> Finance | <strong>Focus:</strong> Financial Management, Corporate Valuation &amp; Data Analysis
+              </p>
             </div>
-            <p className="text-[11px] sm:text-xs text-base-content/75 mb-1.5 leading-relaxed">
-              <strong>Status:</strong> Completed 6 Semesters (Junior/Senior Transition) • Expected Graduation: 2026<br />
-              <strong>Major:</strong> Marketing | <strong>Minor/Concentration:</strong> Human Resource Management (HRM)
-            </p>
-            <p className="text-[11px] sm:text-xs text-base-content/70 leading-relaxed">
-              <strong>Key Courses:</strong> Strategic Brand Management (A), Consumer Behavior (A), Integrated Marketing Communications (A-), Business Statistics (A), HRM Strategy (A), Financial Management (A-).<br />
-              <strong>Honors:</strong> BRAC University Dean&apos;s Honor List, Merit Scholarship Recipient.
-            </p>
+
+            {/* Viqarunnisa Noon School and College */}
+            <div className="pt-2 border-t border-base-content/10">
+              <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
+                <div>
+                  <strong className="text-xs sm:text-sm font-bold text-base-content block">
+                    Viqarunnisa Noon School and College (VNSC)
+                  </strong>
+                  <span className="text-[11px] sm:text-xs text-base-content/80">
+                    Dhaka, Bangladesh
+                  </span>
+                </div>
+              </div>
+              <p className="text-[11px] sm:text-xs text-base-content/75 mt-0.5">
+                • Higher Secondary Certificate (HSC) / College<br />
+                • Secondary School Certificate (SSC) / High School Diploma
+              </p>
+            </div>
           </div>
 
           {/* Leadership & Campus Experience */}
           <div>
             <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Campus Ambassadorship &amp; Leadership Experience
+              Club Leadership &amp; Creative Experience
             </h2>
             
             <div className="space-y-3">
-              {campusAndLeadershipExperience.slice(0, 3).map((exp, idx) => (
+              {campusAndLeadershipExperience.map((exp, idx) => (
                 <div key={idx}>
                   <div className="flex flex-col xs:flex-row justify-between items-start gap-0.5">
                     <div>
@@ -163,10 +178,10 @@ export default function ResumeModal({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Key Business Projects */}
+          {/* Selected Projects */}
           <div>
             <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Selected Business Case Studies &amp; Projects
+              Selected Projects &amp; Initiatives
             </h2>
             <div className="space-y-3">
               {flagshipProjects.slice(0, 3).map((proj, idx) => (
@@ -193,35 +208,22 @@ export default function ResumeModal({ isOpen, onClose }) {
           {/* Skills & Software */}
           <div>
             <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Business &amp; Technical Toolkit
+              Core Competencies &amp; Toolkit
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] sm:text-xs text-base-content/80">
               <div>
-                <strong>Marketing Strategy:</strong> Brand Positioning, STP, Consumer Insights, Social Media Analytics, GTM Planning.
+                <strong>Finance &amp; Analytics:</strong> Financial Statement Analysis, Ratio Modeling, Working with Numbers, MS Excel, Logical Problem Solving.
               </div>
               <div>
-                <strong>Analytics &amp; Software:</strong> MS Excel (Advanced Pivot/Modeling), SPSS, Google Analytics, Canva Pro, Figma.
+                <strong>Creative Design:</strong> Graphic Designing, Poster &amp; Banner Creation, Visual Hierarchy, Canva Pro, Brand Aesthetics.
               </div>
               <div>
-                <strong>HR &amp; People:</strong> Employee Journey Mapping, Onboarding Frameworks, Peer Mentorship, Cross-Functional Teamwork.
+                <strong>Writing &amp; Comms:</strong> Article Writing, Business Report Drafting, Executive Presentations, Pitch Decks.
               </div>
               <div>
-                <strong>Communication:</strong> Executive Pitch Decks, Case Presentations, Emceeing, Professional Copywriting.
+                <strong>Leadership &amp; Clubs:</strong> Senior Executive (BUBEF), Entrepreneurship Development (EDF), Event Logistics, Team Coordination.
               </div>
             </div>
-          </div>
-
-          {/* Certifications & Awards */}
-          <div>
-            <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--accent-solid)] border-b border-base-content/10 pb-1 mb-2">
-              Certifications &amp; Key Honors
-            </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 text-[11px] sm:text-xs text-base-content/80">
-              <li>• 1st Runner Up - National Inter-University Brand Pitch 2024</li>
-              <li>• Google Digital Garage - Fundamentals of Digital Marketing</li>
-              <li>• Best Campus Ambassador of the Quarter Award 2024</li>
-              <li>• HubSpot Academy - Inbound Marketing Certified</li>
-            </ul>
           </div>
 
         </div>

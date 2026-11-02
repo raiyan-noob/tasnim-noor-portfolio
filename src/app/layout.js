@@ -1,21 +1,25 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Tasnim Binte Noor | BBA Portfolio & Strategy Showcase | BRAC University",
-  description: "Portfolio of Tasnim Binte Noor (Nabila), BBA Undergraduate at BRAC Business School (6th Semester Complete). Open for Internships, Campus Ambassador roles & Management Trainee opportunities.",
+  title: "Tasnim Binte Noor Nabila | BBA in Finance & Creative Designer | BRAC University",
+  description: "Official portfolio of Tasnim Binte Noor Nabila — BBA Student in Finance at BRAC University (completed 6 semesters) and Alumna of Viqarunnisa Noon School & College. Senior Executive at BUBEF & Graphic Designer at EDF. Open for corporate internships, campus ambassadorships, and finance roles.",
   keywords: [
     "Tasnim Binte Noor",
-    "Tasnim Noor",
     "Tasnim Binte Noor Nabila",
+    "Tasnim Noor",
     "BRAC University",
     "BRAC Business School",
-    "BBA Portfolio",
-    "Marketing Intern",
+    "Finance Major",
+    "Viqarunnisa Noon School and College",
+    "BUBEF",
+    "EDF",
+    "Mongol Tori",
+    "Creative Designer",
+    "Finance Intern",
     "Campus Ambassador",
-    "Management Trainee",
     "Dhaka Bangladesh"
   ],
-  authors: [{ name: "Tasnim Binte Noor" }],
+  authors: [{ name: "Tasnim Binte Noor Nabila" }],
 };
 
 export default function RootLayout({ children }) {

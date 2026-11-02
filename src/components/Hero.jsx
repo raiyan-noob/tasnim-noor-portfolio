@@ -13,15 +13,19 @@ import {
   FiBriefcase,
   FiZap,
   FiCheckCircle,
-  FiExternalLink
+  FiExternalLink,
+  FiFeather,
+  FiPieChart
 } from "react-icons/fi";
 
 const iconMap = {
   FiBookOpen: FiBookOpen,
-  FiAward: FiAward,
   FiTrendingUp: FiTrendingUp,
   FiUsers: FiUsers,
-  FiBriefcase: FiBriefcase
+  FiFeather: FiFeather,
+  FiAward: FiAward,
+  FiBriefcase: FiBriefcase,
+  FiPieChart: FiPieChart
 };
 
 export default function Hero({ onOpenResume }) {
@@ -47,28 +51,25 @@ export default function Hero({ onOpenResume }) {
 
             {/* Main Headline */}
             <h1 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.18] sm:leading-[1.15] text-base-content mb-5 sm:mb-6">
-              Turning consumer insights into{" "}
+              Combining financial analysis with{" "}
               <span className="gradient-text font-editorial italic font-normal">
-                market-winning
+                creative design
               </span>{" "}
-              brand strategies.
+              &amp; logical problem-solving.
             </h1>
 
             {/* Subtitle / Positioning Statement */}
             <p className="text-sm sm:text-base md:text-lg text-base-content/80 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl">
-              Hello! I am <strong className="text-base-content font-semibold">{personalInfo.fullName}</strong> ({personalInfo.nickname}) — a 
-              results-oriented 6th-semester BBA undergraduate at <span className="text-[var(--accent-solid)] font-semibold">{personalInfo.businessSchool}</span>. 
-              Dual-specializing in <strong className="text-base-content font-semibold">{personalInfo.major}</strong> &amp; <strong className="text-base-content font-semibold">{personalInfo.minorOrSecondConcentration}</strong>, 
-              I blend consumer psychology with quantitative modeling and energetic youth leadership.
+              Hello! I am <strong className="text-base-content font-semibold">{personalInfo.fullName}</strong> — a business student majoring in <span className="text-[var(--accent-solid)] font-semibold">{personalInfo.major}</span> at <strong className="text-base-content font-semibold">{personalInfo.university}</strong> (completed {personalInfo.completedSemesters} semesters). Alumna of <strong className="text-base-content font-semibold">Viqarunnisa Noon School &amp; College</strong>. Senior Executive at <strong className="text-base-content font-semibold">BUBEF</strong> and Graphic Designer at <strong className="text-base-content font-semibold">EDF</strong>. Passionate about numbers, data analysis, and crafting impactful visual designs.
             </p>
 
-            {/* Primary Action Buttons - responsive flex-col on mobile, row on tablet/desktop */}
+            {/* Primary Action Buttons */}
             <div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-2.5 sm:gap-4 w-full sm:w-auto mb-8 sm:mb-10">
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-[var(--accent-from)] via-[var(--accent-via)] to-[var(--accent-to)] text-white hover:opacity-95 shadow-lg shadow-[var(--accent-glow)] transition-all transform hover:-translate-y-0.5 text-center"
               >
-                <span>Explore Case Studies</span>
+                <span>Explore Projects &amp; Cases</span>
                 <FiArrowRight className="w-4 h-4 shrink-0" />
               </a>
 
@@ -101,21 +102,21 @@ export default function Hero({ onOpenResume }) {
                 className="flex items-center gap-1.5 hover:text-[#0A66C2] transition-colors font-medium"
               >
                 <FiLinkedin className="w-4 h-4 shrink-0" />
-                <span>LinkedIn</span>
+                <span>LinkedIn Profile</span>
                 <FiExternalLink className="w-3 h-3 text-base-content/40 shrink-0" />
               </a>
               <span className="text-base-content/20 hidden xs:inline">•</span>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-1.5 hover:text-[var(--accent-solid)] transition-colors font-medium truncate max-w-[200px] xs:max-w-none"
+                className="flex items-center gap-1.5 hover:text-[var(--accent-solid)] transition-colors font-medium truncate max-w-[220px] xs:max-w-none"
               >
                 <FiMail className="w-4 h-4 shrink-0" />
-                <span className="truncate">Email Tasnim</span>
+                <span className="truncate">{personalInfo.email}</span>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Visual Persona & Interactive Profile Badge */}
+          {/* Right Column: Visual Persona with Real Photo nabila.jpeg */}
           <div className="lg:col-span-5 flex justify-center w-full">
             <div className="relative w-full max-w-sm sm:max-w-md">
               {/* Profile Card Container */}
@@ -130,54 +131,51 @@ export default function Hero({ onOpenResume }) {
                     </span>
                   </div>
                   <span className="badge badge-sm badge-outline text-[10px] sm:text-[11px] font-mono">
-                    BRACU • 2026
+                    BRACU • Finance
                   </span>
                 </div>
 
-                {/* Avatar / Monogram Visual Showcase */}
+                {/* Avatar / Real Photo Visual Showcase */}
                 <div className="my-5 sm:my-6 flex flex-col items-center text-center">
-                  <div className="relative mb-4 group">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[var(--accent-from)] via-[var(--accent-via)] to-[var(--accent-to)] p-[2.5px] sm:p-[3px] shadow-xl shadow-[var(--accent-glow)] transform transition-transform group-hover:scale-105">
-                      <div className="w-full h-full rounded-[13px] bg-base-100 flex flex-col items-center justify-center p-2 text-center">
-                        <span className="font-editorial text-3xl sm:text-5xl font-bold gradient-text">
-                          TN
-                        </span>
-                        <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-base-content/50 mt-1">
-                          Nabila
-                        </span>
+                  <div className="relative mb-5 group">
+                    <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-gradient-to-tr from-[var(--accent-from)] via-[var(--accent-via)] to-[var(--accent-to)] p-[3px] shadow-xl shadow-[var(--accent-glow)] transform transition-transform group-hover:scale-105">
+                      <div className="w-full h-full rounded-[13px] bg-base-100 overflow-hidden relative">
+                        <img
+                          src={personalInfo.avatar}
+                          alt={personalInfo.fullName}
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        />
                       </div>
                     </div>
                     {/* Verified Pill */}
-                    <div className="absolute -bottom-2 bg-base-100 border border-[var(--accent-border)] text-[var(--accent-solid)] text-[10px] sm:text-[11px] font-semibold px-2 sm:px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1 whitespace-nowrap">
-                      <FiCheckCircle className="w-3 h-3 shrink-0" />
+                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 bg-base-100 border border-[var(--accent-border)] text-[var(--accent-solid)] text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1 whitespace-nowrap">
+                      <FiCheckCircle className="w-3 h-3 shrink-0 text-emerald-500" />
                       <span>6 Semesters Complete</span>
                     </div>
                   </div>
 
                   <h3 className="font-display font-bold text-lg sm:text-2xl text-base-content">
-                    {personalInfo.fullName}
+                    {personalInfo.preferredName}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[var(--accent-solid)] font-medium mt-1">
-                    {personalInfo.title}
-                  </p>
+                  
                   <p className="text-[11px] sm:text-xs text-base-content/60 mt-0.5">
-                    BRAC Business School • Dhaka, Bangladesh
+                    BRAC University • Dhaka, Bangladesh
                   </p>
                 </div>
 
                 {/* Micro Highlights */}
                 <div className="space-y-2 pt-2">
                   <div className="flex items-center justify-between p-2 sm:p-2.5 rounded-xl bg-base-200/60 border border-base-content/5 text-xs">
-                    <span className="text-base-content/70 font-medium">Academic Track:</span>
-                    <span className="font-semibold text-base-content">BBA (Marketing &amp; HRM)</span>
+                    <span className="text-base-content/70 font-medium">Major Concentration:</span>
+                    <span className="font-semibold text-base-content">Finance (BRAC Business School)</span>
                   </div>
                   <div className="flex items-center justify-between p-2 sm:p-2.5 rounded-xl bg-base-200/60 border border-base-content/5 text-xs">
                     <span className="text-base-content/70 font-medium">Cumulative GPA:</span>
                     <span className="font-bold text-[var(--accent-solid)]">3.82 / 4.00</span>
                   </div>
                   <div className="flex items-center justify-between p-2 sm:p-2.5 rounded-xl bg-base-200/60 border border-base-content/5 text-xs">
-                    <span className="text-base-content/70 font-medium">Club Executive:</span>
-                    <span className="font-semibold text-base-content">BUBaC &amp; BUMA</span>
+                    <span className="text-base-content/70 font-medium">Club Roles:</span>
+                    <span className="font-semibold text-base-content">Senior Executive (BUBEF) • EDF</span>
                   </div>
                 </div>
 
