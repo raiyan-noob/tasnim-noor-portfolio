@@ -121,11 +121,10 @@ export default function Contact({ preselectedRole }) {
   };
 
   const inquiryTypes = [
-    "Marketing Internship",
+    "Internship",
     "Campus Ambassador Role",
-    "Management Trainee",
-    "HR Internship",
-    "General Networking"
+    "Job Opportunity",
+    "Others"
   ];
 
   return (
