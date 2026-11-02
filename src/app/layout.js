@@ -20,6 +20,14 @@ export const metadata = {
     "Dhaka Bangladesh"
   ],
   authors: [{ name: "Tasnim Binte Noor Nabila" }],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
