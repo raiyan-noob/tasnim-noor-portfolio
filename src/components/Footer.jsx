@@ -64,7 +64,7 @@ export default function Footer() {
           {/* Right: Scroll to top */}
           <div className="flex items-center gap-3">
             <span className="text-[11px] sm:text-xs text-base-content/50">
-              © {new Date().getFullYear()} • Crafted for Leadership
+              © {new Date().getFullYear()} • Crafted for Leadership & Opportunities
             </span>
             <button
               onClick={scrollToTop}
