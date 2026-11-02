@@ -1,26 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: night --default, luxury, dim, light, cupcake;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dynamic Accent Palettes ── */
+:root, [data-palette="rose"] {
+  --accent-from: #fb7185; /* Rose 400 */
+  --accent-via: #ec4899; /* Pink 500 */
+  --accent-to: #f59e0b;   /* Amber 500 */
+  --accent-glow: rgba(251, 113, 133, 0.25);
+  --accent-subtle: rgba(251, 113, 133, 0.12);
+  --accent-border: rgba(251, 113, 133, 0.3);
+  --accent-solid: #f43f5e;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-palette="emerald"] {
+  --accent-from: #10b981; /* Emerald 500 */
+  --accent-via: #06b6d4;  /* Cyan 500 */
+  --accent-to: #3b82f6;   /* Blue 500 */
+  --accent-glow: rgba(16, 185, 129, 0.25);
+  --accent-subtle: rgba(16, 185, 129, 0.12);
+  --accent-border: rgba(16, 185, 129, 0.3);
+  --accent-solid: #059669;
+}
+
+[data-palette="indigo"] {
+  --accent-from: #818cf8; /* Indigo 400 */
+  --accent-via: #c084fc;  /* Purple 400 */
+  --accent-to: #38bdf8;   /* Sky 400 */
+  --accent-glow: rgba(129, 140, 248, 0.25);
+  --accent-subtle: rgba(129, 140, 248, 0.12);
+  --accent-border: rgba(129, 140, 248, 0.3);
+  --accent-solid: #6366f1;
+}
+
+[data-palette="gold"] {
+  --accent-from: #fbbf24; /* Amber 400 */
+  --accent-via: #f97316;  /* Orange 500 */
+  --accent-to: #e11d48;   /* Rose 600 */
+  --accent-glow: rgba(251, 191, 36, 0.25);
+  --accent-subtle: rgba(251, 191, 36, 0.12);
+  --accent-border: rgba(251, 191, 36, 0.3);
+  --accent-solid: #d97706;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Custom Gradient Text Utility ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-from) 0%, var(--accent-via) 50%, var(--accent-to) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass Morphism Classes ── */
+.glass-panel {
+  background: rgba(18, 24, 38, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .glass-panel,
+[data-theme="cupcake"] .glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] .glass-card,
+[data-theme="cupcake"] .glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.glass-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 12px 30px -10px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+/* ── Glow & Ambient Lights ── */
+.ambient-glow {
+  position: absolute;
+  filter: blur(80px);
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0.25;
+  background: radial-gradient(circle, var(--accent-from), var(--accent-to));
+}
+
+/* ── Animated Gradient Border ── */
+.gradient-border-box {
+  position: relative;
+  border-radius: 1.25rem;
+  background: inherit;
+}
+
+.gradient-border-box::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 1.25rem;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-from), var(--accent-via), var(--accent-to));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border-box:hover::before {
+  opacity: 1;
+}
+
+/* ── Hide scrollbar utility for clean horizontal pill sliders on mobile ── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-from);
+}
+
+/* ── Keyframe Animations ── */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(0.5deg); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
 }
