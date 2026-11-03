@@ -273,27 +273,56 @@ export const flagshipProjects = [
   },
   {
     id: "edf-visual-branding-creative-suite",
-    title: "Visual Branding, Seminar Posters & Creative Graphic Design Portfolio",
-    category: "Creative Graphic Design",
-    tag: "Design Showcase",
-    organization: "",
+    title: "Visual Branding, Corporate Posters & Creative Design Portfolio",
+    category: "Graphic Design & Visual Communications",
+    tag: "Creative Design Showcase",
+    organization: "BRAC University Business & Economics Forum (BUBEF)",
     role: "Graphic Designer & Creative Executive",
-    summary: "High-impact brand identity design, event typography, and multi-format promotional assets created for premier entrepreneurship seminars, workshops, and campus activations.",
-    challenge: "Overcoming visual clutter and student distraction on campus to engineer eye-catching, informative posters that drove event engagement and registration.",
+    summary: "Official portfolio of corporate placement posters, event announcements, and digital brand identities designed for BRAC University Business & Economics Forum (BUBEF).",
+    challenge: "Creating professional, on-brand promotional posters that celebrate member achievements, respect corporate brand guidelines (Grameenphone, Bata), and capture campus engagement.",
     strategy: [
-      "Engineered bold visual concepts fusing modern typography, clear contrast hierarchies, and branded geometric iconography.",
-      "Produced tailored asset suites for Facebook event banners, Instagram stories, on-campus physical print posters, and presentation slides.",
-      "Maintained strict brand coherence across all forum collateral to establish a polished, professional identity.",
-      "Iterated designs based on stakeholder feedback, ensuring clear visibility for guest speaker profiles and schedule timelines."
+      "Designed polished congratulatory creatives celebrating BUBEF executive corporate placements at multinational giants (Grameenphone, Bata).",
+      "Engineered modern typography hierarchies, balancing brand logos, formal corporate typography, and portrait cutouts.",
+      "Crafted the official celestial visual theme and invitation typography for BUBEF Team's Day 'Festara'.",
+      "Ensured consistent brand aesthetics and high-resolution asset delivery for digital social channels."
     ],
     results: [
-      "Created headline seminar posters celebrated across campus by university faculty and forum leadership.",
-      "Drove landmark attendance records with over 300+ registered university participants per flagship event.",
-      "Standardized digital templates adopted for ongoing club workshops and marketing campaigns."
+      "Published across official BUBEF digital channels with high engagement from university peers and faculty.",
+      "Strengthened forum identity and celebrated student executive transitions into corporate careers.",
+      "Established standardized design templates adopted for executive congratulations and forum activations."
     ],
-    tools: ["Adobe Photoshop", "Canva Pro", "Visual Hierarchy", "Digital Marketing Layouts", "Typography"],
-    metrics: { roi: "Published Designs", reach: "Campus-Wide", sample: "Multi-Format Suite" },
-    gradient: "from-pink-500 via-rose-500 to-amber-500"
+    tools: ["Graphic Design", "Canva Pro", "Adobe Photoshop", "Visual Hierarchy", "Typography", "Brand Identity"],
+    metrics: { roi: "3 Featured Designs", reach: "Campus-Wide", sample: "Official BUBEF Media" },
+    gradient: "from-pink-500 via-rose-500 to-amber-500",
+    gallery: [
+      {
+        id: "gp-nextern",
+        title: "Corporate Placement Poster — Grameenphone Nextern",
+        role: "Marketing Division Placement",
+        client: "BRAC University Business & Economics Forum (BUBEF)",
+        honoree: "Tasfia Musfirat Ruhie (Former Executive, CAE)",
+        image: "/designs/bubef-grameenphone-nextern.jpg",
+        description: "Official celebration poster designed for BUBEF Executive Tasfia Musfirat Ruhie on being appointed as a Nextern in Grameenphone's Marketing Division. Features clean corporate typography, dual institutional branding (BUBEF & Grameenphone), balanced photographic cutout, and modern visual hierarchy."
+      },
+      {
+        id: "bata-intern",
+        title: "Corporate Placement Poster — Bata Bangladesh Intern",
+        role: "HR & Admin Division Placement",
+        client: "BRAC University Business & Economics Forum (BUBEF)",
+        honoree: "Nazmus Sakib (Former Executive, HR & Admin)",
+        image: "/designs/bubef-bata-intern.jpg",
+        description: "High-impact social media congratulatory creative for Nazmus Sakib securing an internship at Bata Bangladesh. Combines dynamic curved wave geometry in signature Bata red, dot patterns, clean modern typography, and branded BUBEF lanyard detail."
+      },
+      {
+        id: "festara-teams-day",
+        title: "Event Announcement Poster — BUBEF Team's Day 'Festara'",
+        role: "Flagship Forum Gathering & Celebration",
+        client: "BRAC University Business & Economics Forum (BUBEF)",
+        honoree: "Forum Executive Team & Members",
+        image: "/designs/bubef-festara-teams-day.jpg",
+        description: "Official event poster for BRAC University Business & Economics Forum's Team's Day 'Festara'. Crafted on a deep midnight starry watercolor texture with elegant sparkling cursive script typography, minimalist calendar/location icons, and formal institutional header."
+      }
+    ]
   }
   
 ];
